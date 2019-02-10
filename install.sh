@@ -15,7 +15,7 @@ echo
 echo "准备开始安装。将要安装以下程序以及其依赖程序："
 echo " Aria2，用以下载； AriaNg 用以提供网页版管理工具； Apache2，开启网页服务器以及文件服务器 ；vim，文本编辑器，有需要的时候用以改配置文件"
 echo "我已知晓风险并确认进行部署。按回车继续。若不知道风险，自行百度。"
-read
+read a
 echo "开始咯！"
 # Update
 sudo apt update -y
