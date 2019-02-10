@@ -19,23 +19,17 @@ read
 echo "开始咯！"
 # Update
 sudo apt update -y
-sudo apt upgrade -y
 # 安装必要程序
 sudo apt-get install vim aria2 apache2 unzip screen git -y
 # 下载AriaNg
 sudo rm -rf /tmp/Onekey-deploy_aria2
 sudo git clone https://github.com/Masterchiefm/Onekey-deploy_aria2.git /tmp/Onekey-deploy_aria2
+sudo rm -rf /var/www/html/lixian
 sudo mkdir -p /var/www/html/lixian 
 sudo unzip /tmp/Onekey-deploy_aria2/*.zip -d /var/www/html/lixian
 sudo chmod 777 -R /var/www/html/lixian
-
-#  开始修改配置文件
-sudo mkdir -p /root/.aria2
-sudo rm -rf /root/.aria2/*
-sudo touch /root/.aria2/aria2.session
-sudo mv /tmp/Onekey-deploy_aria2/aria2.conf /root/.aria2/aria2.conf
-echo "请配置登录密码"
-read
+#配置密码
+sudo sh ./setpasswd
 
 
 

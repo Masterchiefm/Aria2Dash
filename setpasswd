@@ -1,0 +1,21 @@
+#!/bin/bash
+#修改conf，设置RPC密码
+sudo rm -rf /root/.aria2
+sudo mkdir -p /root/.aria2
+sudo rm -rf /root/.aria2/*
+sudo touch /root/.aria2/aria2.session
+sudo mv /tmp/Onekey-deploy_aria2/aria2.conf /root/.aria2/aria2.conf
+clear
+
+echo "请输入你想设置的RPC登录密码"
+read password
+words1=已将RPC密码设置为:
+echo $words1 $password
+secret=rpc-secret=$password
+sudo echo $secret >> /root/.aria2/aria2.conf
+echo RPC密码配置成功，请记住密码是：
+echo $password
+echo 按任意键结束
+read
+cat ./readme.md
+
