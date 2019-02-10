@@ -1,7 +1,7 @@
 # Onekey-deploy_aria2
 # 一键设置带Web管理前端的Aria2下载工具
 
-##安装
+## 安装
 复制并在终端中输入以下代码，回车运行。
 ```
 wget https://github.com/Masterchiefm/Onekey-deploy_aria2/releases/download/1.0/install.sh && sh ./install.sh
