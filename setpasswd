@@ -17,5 +17,5 @@ echo RPC密码配置成功，请记住密码是：
 echo $password
 echo 按任意键结束
 read
-cat ./readme.md
+cat /tmp/Onekey-deploy_aria2/readme.md
 
