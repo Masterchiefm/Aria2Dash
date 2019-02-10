@@ -1,5 +1,5 @@
-# Onekey-deploy_aria2
-# 一键设置带Web管理前端的Aria2下载工具
+# Script of Onekey-deploy_aria2
+# 一键脚本，设置带Web管理前端的Aria2下载工具
 
 ## 安装
 复制并在终端中输入以下代码，回车运行。
@@ -49,3 +49,6 @@ ls 列出所有文件，rm -rf * 删除所有文件
 
 ## 例子
 [moqiqin.cn](http://moqiqin.cn/lixian)
+
+项目核心为
+[AriaNg](https://github.com/mayswind/AriaNg) 和 [Aria2](https://github.com/aria2/aria2)
