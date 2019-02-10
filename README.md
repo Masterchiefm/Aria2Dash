@@ -1,6 +1,7 @@
 # Script of Onekey-deploy aria2
 # 一键脚本，设置带Web管理前端的Aria2下载工具
-
+本脚本用来一键安装Aria2以及完成包括配置AriaNg在内的一系列后续配置
+仅运行于ubuntu等基于Debian的系统上。Cent OS等系统可以自行修改release中的文件，仅将apt修改为yum然后运行即可
 ## 安装
 复制并在终端中输入以下代码，回车运行。
 ```
