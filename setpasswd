@@ -16,6 +16,6 @@ sudo echo $secret >> /root/.aria2/aria2.conf
 echo RPC密码配置成功，请记住密码是：
 echo $password
 echo 按任意键结束
-read
+read a
 cat /tmp/Onekey-deploy_aria2/readme.md
 
