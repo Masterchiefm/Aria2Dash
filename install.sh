@@ -26,7 +26,9 @@ sudo rm -rf /tmp/Onekey-deploy_aria2
 sudo git clone https://github.com/Masterchiefm/Onekey-deploy_aria2.git /tmp/Onekey-deploy_aria2
 sudo sh /tmp/Onekey-deploy_aria2/getariang
 sudo rm -rf /var/www/html/lixian
+sudo rm -rf /var/www/html/downloads
 sudo mkdir -p /var/www/html/lixian 
+sudo mkdir -p /var/www/html/downloads
 sudo unzip /tmp/Onekey-deploy_aria2/*.zip -d /var/www/html/lixian
 sudo chmod 777 -R /var/www/html/lixian
 #添加启动入口
