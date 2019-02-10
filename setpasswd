@@ -15,6 +15,8 @@ secret=rpc-secret=$password
 sudo echo $secret >> /root/.aria2/aria2.conf
 echo RPC密码配置成功，请记住密码是：
 echo $password
+echo 配置文件保存在 /root/.aria2/aria2.conf 中
+echo 以后要修改密码，请 vim /root/.aria2/aria2.conf 修改最后一行的 rpc-secret=
 echo 按任意键结束
 read a
 clear
