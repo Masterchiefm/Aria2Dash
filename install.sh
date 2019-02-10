@@ -22,9 +22,22 @@ sudo apt update -y
 # 安装必要程序
 sudo apt-get install vim aria2 apache2 unzip screen git -y
 # 下载AriaNg
-sudo sh getariang
-
-
+sudo rm -rf /tmp/Onekey-deploy_aria2
+sudo git clone https://github.com/Masterchiefm/Onekey-deploy_aria2.git /tmp/Onekey-deploy_aria2
+sudo sh /tmp/Onekey-deploy_aria2/getariang
+sudo rm -rf /var/www/html/lixian
+sudo mkdir -p /var/www/html/lixian 
+sudo unzip /tmp/Onekey-deploy_aria2/*.zip -d /var/www/html/lixian
+sudo chmod 777 -R /var/www/html/lixian
+#添加启动入口
+sudo rm -rf ~/Start_Aria.sh
+sudo cp /tmp/Onekey-deploy_aria2/Start* ~/
+sudo chmod 777 ~/Start_Aria.sh
+sudo rm -rf /root/Start_Aria.sh
+sudo cp /tmp/Onekey-deploy_aria2/Start* /root
+sudo chmod 777 /root/Start_Aria.sh
+#配置密码
+sudo sh /tmp/Onekey-deploy_aria2/setpasswd
 
 
 
