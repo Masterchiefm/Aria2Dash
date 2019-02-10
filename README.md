@@ -22,10 +22,12 @@ screen -r
 
 ## 使用
 ### 部署在服务器：
-进入下载管理 
+进入下载管理
+在浏览器地址栏中输入以下：
 ```
-http://ip地址/lixian 
+http://ip地址(或者域名)/lixian 
 ```
+例如：http://moqiqin.cn/lixian 或者 htttp://127.0.0.1/lixian
 ![示意图](http://123.207.125.121/wp-content/uploads/2019/02/ariang.png)
 取回文件
 在网页中点击”取回文件“或者访问
