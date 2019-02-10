@@ -1,4 +1,4 @@
-# Script of Onekey-deploy_aria2
+# Script of Onekey-deploy aria2
 # 一键脚本，设置带Web管理前端的Aria2下载工具
 
 ## 安装
