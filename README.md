@@ -55,5 +55,5 @@ ls 列出所有文件，rm -rf * 删除所有文件
 [AriaNg](https://github.com/mayswind/AriaNg) 和 [Aria2](https://github.com/aria2/aria2)
 
 赞赏
-![](http://123.207.125.121/wp-content/uploads/2019/01/1548153825304.jpg)
-![](http://123.207.125.121/wp-content/uploads/2019/01/mm_facetoface_collect_qrcode_1548153918500.png)
+![](https://github.com/Masterchiefm/Hakintosh-in-ThinkPad-X1-Tablet-Gen-1/blob/master/pictures/mm_facetoface_collect_qrcode_1548153918500.png)
+![](https://github.com/Masterchiefm/Hakintosh-in-ThinkPad-X1-Tablet-Gen-1/blob/master/pictures/1548153825304.jpg)
