@@ -5,7 +5,7 @@
 ## 安装
 复制并在终端中输入以下代码，回车运行。
 ```
-sudo rm -rf ./install && wget https://github.com/Masterchiefm/Onekey-deploy_aria2/releases/download/1.0.1/install.sh && sh ./install.sh
+sudo rm -rf ./install && wget https://github.com/Masterchiefm/Onekey-deploy_aria2/releases/download/1.0.2/install.sh && sh ./install.sh
 ```
 按照说明配置即可
 
