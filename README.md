@@ -5,7 +5,7 @@
 ## 安装
 复制并在终端中输入以下代码，回车运行。
 ```
-sudo rm -rf ./install && wget https://github.com/Masterchiefm/Onekey-deploy_aria2/releases/download/1.0.2/install.sh && sh ./install.sh
+sudo rm -rf ./install* && wget https://github.com/Masterchiefm/Onekey-deploy_aria2/releases/download/1.0.2/install.sh && sh ./install.sh
 ```
 按照说明配置即可
 
@@ -29,7 +29,7 @@ screen -r
 http://ip地址(或者域名)/lixian 
 ```
 例如：http://moqiqin.cn/lixian 或者 htttp://127.0.0.1/lixian
-![示意图](http://123.207.125.121/wp-content/uploads/2019/02/ariang.png)
+![示意图](https://moqiqin.cn/wp-content/uploads/2019/02/ariang.png)
 取回文件
 在网页中点击”取回文件“或者访问
 ```
@@ -51,9 +51,7 @@ ls 列出所有文件，rm -rf * 删除所有文件
 ## 例子
 [moqiqin.cn](http://moqiqin.cn/lixian)
 
-项目核心为
+其实就是搞个脚本把下面两个东西凑在一起用。
 [AriaNg](https://github.com/mayswind/AriaNg) 和 [Aria2](https://github.com/aria2/aria2)
 
-赞赏
-![](https://github.com/Masterchiefm/Hakintosh-in-ThinkPad-X1-Tablet-Gen-1/blob/master/pictures/mm_facetoface_collect_qrcode_1548153918500.png)
-![](https://github.com/Masterchiefm/Hakintosh-in-ThinkPad-X1-Tablet-Gen-1/blob/master/pictures/1548153825304.jpg)
+
