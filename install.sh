@@ -20,7 +20,7 @@ echo "请按回车键继续。。。"
 # Update
 sudo apt update -y
 # 安装必要程序
-sudo apt-get install vim aria2 apache2 unzip screen git -y
+sudo apt-get install vim aria2 apache2 unzip git -y
 # 下载AriaNg
 sudo rm -rf /tmp/Onekey-deploy_aria2
 sudo git clone https://github.com/Masterchiefm/Onekey-deploy_aria2.git /tmp/Onekey-deploy_aria2
