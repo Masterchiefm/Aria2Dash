@@ -31,13 +31,11 @@ sudo mkdir -p /var/www/html/lixian
 sudo mkdir -p /var/www/html/downloads
 sudo unzip /tmp/Onekey-deploy_aria2/*.zip -d /var/www/html/lixian
 sudo chmod 777 -R /var/www/html/lixian
-#添加启动入口
-sudo rm -rf ~/Start_Aria.sh
-sudo cp /tmp/Onekey-deploy_aria2/Start* ~/
-sudo chmod 777 ~/Start_Aria.sh
-sudo rm -rf /root/Start_Aria.sh
-sudo cp /tmp/Onekey-deploy_aria2/Start* /root
-sudo chmod 777 /root/Start_Aria.sh
+
+#更改为使用systemctl
+sudo cp /tmp/Onekey-deploy_aria2/aria2c /etc/init.d/
+sudo chmod 777  /etc/init.d/aria2c
+sudo systemctl daemon-reload
 #配置密码
 sudo sh /tmp/Onekey-deploy_aria2/setpasswd
 
