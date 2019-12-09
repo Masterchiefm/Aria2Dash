@@ -10,16 +10,20 @@ sudo rm -rf ./install* && wget https://github.com/Masterchiefm/Onekey-deploy_ari
 按照说明配置即可
 
 ## 启动
-ssh 登录进终端后，在家目录中有一个Start_Aria.sh文件。输入以下运行（注意大小写）
+ssh 登录进终端后，输入：
 ```
-sh Start_Aria.sh
-```
-运行后按 Ctrl + a + d 放入后台，进入后台后可以退出终端或者输入以下重新显示。按 Ctrl + c 退出。
-```
-screen -r
-```
-显示至少有一个绿色提示即可
+#启动
+sudo service aria2 start
 
+#重新启动
+sudo service aria2 restart
+
+#查看状态
+sudo service aria2 status
+
+#关闭
+sudo service aria2 stop
+```
 
 ## 使用
 ### 部署在服务器：
