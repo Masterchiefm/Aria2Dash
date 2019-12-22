@@ -18,10 +18,10 @@ done
 
 #判断系统是debian，Ubuntu，Fedora，cent还是手机的turmux
 
-if [[  $(command -v apt)  ]] ; then
-        cmd="apt"
+if [[  $(command -v sudo apt)  ]] ; then
+        cmd="sudo apt"
 else
-        cmd="yum"
+        cmd="sudo yum"
 
 fi
 
