@@ -1,0 +1,62 @@
+{
+    "settings": {
+        "key": "",
+        "signup": false,
+        "createUserDir": false,
+        "defaults": {
+            "scope": ".",
+            "locale": "en",
+            "viewMode": "list",
+            "sorting": {
+                "by": "name",
+                "asc": false
+            },
+            "perm": {
+                "admin": false,
+                "execute": true,
+                "create": true,
+                "rename": true,
+                "modify": true,
+                "delete": true,
+                "share": true,
+                "download": true
+            },
+            "commands": []
+        },
+        "authMethod": "json",
+        "branding": {
+            "name": "",
+            "disableExternal": false,
+            "files": ""
+        },
+        "commands": {
+            "after_copy": [],
+            "after_delete": [],
+            "after_rename": [],
+            "after_save": [],
+            "after_upload": [],
+            "before_copy": [],
+            "before_delete": [],
+            "before_rename": [],
+            "before_save": [],
+            "before_upload": []
+        },
+        "shell": [
+            ""
+        ],
+        "rules": []
+    },
+    "server": {
+        "root": ".",
+        "baseURL": "",
+        "socket": "",
+        "tlsKey": "",
+        "tlsCert": "",
+        "port": "8090",
+        "address": "0.0.0.0",
+        "log": "stdout"
+    },
+    "auther": {
+        "recaptcha": null
+    }
+}

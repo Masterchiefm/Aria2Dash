@@ -1,0 +1,31 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          sample
+# Required-Start:    $remote_fs $network
+# Required-Stop:     $remote_fs $network
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: File Browser
+### END INIT INFO
+ 
+case "$1" in
+start)
+ 
+echo -n "Starting filebrowser"
+sudo -u root filebrowser
+echo "filebrowser actived."
+;;
+stop)
+ 
+echo -n "Shutting down filebrowser "
+killall filebrowser
+echo "filebrowser stoped."
+;;
+restart)
+ 
+killall filebrowser
+sudo -u root filebrowser
+echo "filebrowser restarted."
+;;
+esac
+exit
