@@ -1,6 +1,7 @@
 #/bin/bash
 sudo rm -rf ./install.sh
 cd /
+p=1234
 while getopts ":p:p2:" opt
 do
     case $opt in
