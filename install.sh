@@ -25,7 +25,7 @@ fi
 
 
 
-ip=$(curl -s https://ipinfo.io/ip)
+
 
 
 #安装必要的包
@@ -49,6 +49,12 @@ cat $dir/lixian/head.html > $dir/lixian/index.html
 echo $link >> $dir/lixian/index.html
 cat $dir/lixian/foot.html >> $dir/lixian/index.html
 
+#沃日，为啥一直bug。。。
+dir="/var/www/html"
+link="<a href="$ip:8080" target="blank">"
+cat $dir/lixian/head.html > $dir/lixian/index.html
+echo $link >> $dir/lixian/index.html
+cat $dir/lixian/foot.html >> $dir/lixian/index.html
 #安装FileBrowser
 curl -fsSL https://filebrowser.xyz/get.sh | bash
 
