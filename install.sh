@@ -15,11 +15,11 @@ done
 
 
 #判断系统是debian，Ubuntu，Fedora，cent还是手机的turmux
-cmd="apt-get"
+
 if [[  $(command -v apt)  ]] ; then
-        cmd="yum"
+        cmd="apt"
 else
-        cmd="pkg"
+        cmd="yum"
 
 fi
 
@@ -29,8 +29,9 @@ ip=$(curl -s https://ipinfo.io/ip)
 
 
 #安装必要的包
-$cmd update -y
-$cmd screen vim aria2 apache2 unzip git curl -y
+$cmd update 
+cmd2="$cmd install screen vim aria2 apache2 unzip git curl -y"
+$cmd2
 
 # 下载AriaNg
 dir="/var/www/html"
@@ -51,7 +52,7 @@ echo $dir/lixian/foot.html > $dir/lixian/index.html
 
 #安装FileBrowser
 curl -fsSL https://filebrowser.xyz/get.sh | bash
-filebrowser config import $tmp/filebrowser.json
+
 
 
 
@@ -75,3 +76,5 @@ sudo chmod 777  /etc/init.d/filebrowser
 sudo systemctl daemon-reload
 sudo systemctl enable aria2c
 sudo systemctl enable filebrowser
+sudo service aria2c restart
+sudo service filemanager restart
