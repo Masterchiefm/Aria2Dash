@@ -47,7 +47,7 @@ sudo chmod 777 -R $dir/lixian
 link="<a href="$ip:8080" target="blank">"
 echo $dir/lixian/head.html > $dir/lixian/index.html
 echo $link >> $dir/lixian/index.html
-echo $dir/lixian/foot.html > $dir/lixian/index.html
+echo $dir/lixian/foot.html >> $dir/lixian/index.html
 
 #安装FileBrowser
 curl -fsSL https://filebrowser.xyz/get.sh | bash
