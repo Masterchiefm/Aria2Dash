@@ -38,7 +38,6 @@ dir="/var/www/html"
 tmp="/tmp/Onekey-deploy_aria2"
 sudo rm -rf $tmp
 sudo git clone https://github.com/Masterchiefm/Onekey-deploy_aria2.git $tmp
-sudo sh $tmp/getariang
 sudo rm -rf $dir/lixian
 sudo rm -rf $dir/downloads
 sudo mkdir -p $dir/lixian 
@@ -74,7 +73,7 @@ sudo cp $tmp/filebrowser /etc/init.d/
 sudo chmod 777  /etc/init.d/aria2c
 sudo chmod 777  /etc/init.d/filebrowser
 sudo systemctl daemon-reload
-sudo systemctl enable aria2c
-sudo systemctl enable filebrowser
+sudo update-rc.d   filebrowser   enable
+sudo update-rc.d   aria2c  enable
 sudo service aria2c restart
-sudo service filemanager restart
+sudo service filebrowser restart
