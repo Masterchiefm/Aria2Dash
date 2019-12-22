@@ -1,5 +1,5 @@
 #/bin/bash
-
+sudo rm -rf ./install.sh
 while getopts ":p:p2:" opt
 do
     case $opt in
