@@ -45,7 +45,7 @@ sudo mkdir -p $dir/lixian
 sudo mkdir -p $dir/downloads
 sudo unzip $tmp/*.zip -d $dir/lixian
 sudo chmod 777 -R $dir/lixian
-link="<a href="$ip:8090" target="blank">"
+link="<a href="$ip:8080" target="blank">"
 echo $dir/lixian/head.html > $dir/lixian/index.html
 echo $link >> $dir/lixian/index.html
 echo $dir/lixian/foot.html > $dir/lixian/index.html
