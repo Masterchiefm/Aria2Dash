@@ -12,7 +12,7 @@ case "$1" in
 start)
  
 echo -n "Starting filebrowser"
-sudo -u root filebrowser
+sudo -u root  filebrowser -r /var/www/html  -a 0.0.0.0 
 echo "filebrowser actived."
 ;;
 stop)
@@ -24,7 +24,7 @@ echo "filebrowser stoped."
 restart)
  
 killall filebrowser
-sudo -u root filebrowser
+sudo -u root  filebrowser -r /var/www/html  -a 0.0.0.0
 echo "filebrowser restarted."
 ;;
 esac
