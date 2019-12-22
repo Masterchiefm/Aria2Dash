@@ -46,7 +46,7 @@ sudo mkdir -p $dir/lixian
 sudo mkdir -p $dir/downloads
 sudo unzip $tmp/*.zip -d $dir/lixian
 sudo chmod 777 -R $dir/lixian
-link="<a href="$ip:8080" target="blank">"
+link="<a href="http://$ip:8080" target="blank">"
 cat $dir/lixian/head.html > $dir/lixian/index.html
 echo $link >> $dir/lixian/index.html
 cat $dir/lixian/foot.html >> $dir/lixian/index.html
@@ -55,7 +55,7 @@ sudo rm -rf $dir/index.html
 #沃日，为啥一直bug。。。
 ip=$(curl -s https://ipinfo.io/ip)
 dir="/var/www/html"
-link="<a href="$ip:8080" target="blank">"
+link="<a href="http://$ip:8080" target="blank">"
 cat $dir/lixian/head.html > $dir/lixian/index.html
 echo $link >> $dir/lixian/index.html
 cat $dir/lixian/foot.html >> $dir/lixian/index.html
