@@ -23,7 +23,7 @@ else
 
 fi
 
-git clone xxxx
+
 
 ip=$(curl -s https://ipinfo.io/ip)
 FilePort=8090
