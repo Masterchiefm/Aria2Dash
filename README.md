@@ -22,31 +22,31 @@ Aria2是一个基于命令行的开源下载工具，支持除了ed2k以及迅�
 复制粘贴以下命令到终端，运行执行即可。全部参数采用默认设置。
 
 cent或者fedora请将apt改yum，脚本写的时候考虑过这些系统。但是未测试，理论上来说可以用。
-'''
+```
 sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Onekey-deploy_aria2/releases/download/2.0.3/install.sh)
-'''
+```
 
 2. 在部署服务器前设置以自动安装
 以vultr为例。在deploy服务器前，找到script选项，添加一个新的boot脚本。删除原有内容，粘贴以下并保存。
 
 cent或者fedora请将apt改yum，脚本写的时候考虑过这些系统。但是未测试，理论上来说可以用。
-'''
+```
 #!/bin/bash
 
 sudo apt install curl -y
  bash <(curl -s -L https://github.com/Masterchiefm/Onekey-deploy_aria2/releases/download/2.0.3/install.sh)
-'''
+```
 保存后请再次检查服务器套餐设置，并记得勾选上脚本。点击deploy后，等待5分钟即可。
 
 3. 高级安装。
 先下载脚本。
-'''
+```
 wget https://github.com/Masterchiefm/Onekey-deploy_aria2/releases/download/2.0.3/install.sh
-'''
+```
 然后运行。
-'''
+```
 bash ./install.sh -a n -d 网页目录 -p aria2密码
-'''
+```
 注意，只能用bash，不可以用sh。
 
 参数-a 表示是否安装apache2网页服务。默认值为安装，不安装就n。
@@ -56,9 +56,9 @@ bash ./install.sh -a n -d 网页目录 -p aria2密码
 参数-p 用来指定Aria2的密钥。脚本提供的默认密码为1234。你也可以安装后进入/root/.aria2/aria2.conf修改。修改后重新运行aria2即可。
 
 例如以下命令:
-'''
+```
 bash ./install.sh -a n -d /var/web -p 1234567
-'''
+```
 意思是不安装apache2，指定将AriaNg放入/var/web内，设置Aria2的RPC密钥为1234567
 
 
