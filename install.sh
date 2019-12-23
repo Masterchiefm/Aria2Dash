@@ -1,15 +1,41 @@
 #/bin/bash
 sudo rm -rf ./install.sh
 cd /
+
+#Aria2密码
 p=1234
-while getopts ":p:p2:" opt
+
+#是否安装Apache2
+a=y
+
+#默认网页路径
+dir="/var/www/html"
+d=$dir
+
+if [ $d != $dir ] ; then
+    dir=$d
+    echo !
+fi
+
+
+while getopts ":p:a:d:h:" opt
 do
     case $opt in
         p)
         p=$OPTARG
         ;;
-        p2)
-        p2=$OPTARG
+        a)
+        a=$OPTARG
+        ;;
+        d)
+        d=$OPTARG
+        ;;
+        h)
+        h=$OPTARG
+        ;;
+        ?)
+        echo "WTF???"
+        exit 
         ;;
     esac
 done
@@ -26,17 +52,23 @@ else
 fi
 
 
-
-
-
-
 #安装必要的包
 $cmd update 
-cmd2="$cmd install screen vim aria2 apache2 unzip git curl -y"
+#根据需要，安装Apache2
+if [ $a = "y" ] ; then
+    cmd1="$cmd install apache2 -y"
+    $cmd1
+    sudo mv $dir/index.html $dir/index.html0
+else  
+    echo "I will not install apache2."
+fi
+
+#安装必要的
+cmd2="$cmd install screen vim aria2 unzip git curl -y"
 $cmd2
 
 # 下载AriaNg
-dir="/var/www/html"
+
 tmp="/tmp/Onekey-deploy_aria2"
 sudo rm -rf $tmp
 sudo git clone https://github.com/Masterchiefm/Onekey-deploy_aria2.git $tmp
@@ -56,9 +88,9 @@ cat $dir/lixian/foot.html >> $dir/lixian/index.html
 ip=$(curl -s https://ipinfo.io/ip)
 dir="/var/www/html"
 link="<a href="http://$ip:8080" target="blank">"
-cat $dir/lixian/head.html > $dir/lixian/index.html
-echo $link >> $dir/lixian/index.html
-cat $dir/lixian/foot.html >> $dir/lixian/index.html
+sudo cat $dir/lixian/head.html > $dir/lixian/index.html
+sudo echo $link >> $dir/lixian/index.html
+sudo cat $dir/lixian/foot.html >> $dir/lixian/index.html
 #安装FileBrowser
 curl -fsSL https://filebrowser.xyz/get.sh | bash
 
