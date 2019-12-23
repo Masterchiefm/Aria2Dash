@@ -50,7 +50,7 @@ link="<a href="http://$ip:8080" target="blank">"
 cat $dir/lixian/head.html > $dir/lixian/index.html
 echo $link >> $dir/lixian/index.html
 cat $dir/lixian/foot.html >> $dir/lixian/index.html
-sudo rm -rf $dir/index.html
+#sudo rm -rf $dir/index.html
 
 #沃日，为啥一直bug。。。
 ip=$(curl -s https://ipinfo.io/ip)
