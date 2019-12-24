@@ -18,7 +18,7 @@ Aria2是一个基于命令行的开源下载工具，支持除了ed2k以及迅�
 
 ## 安装
 
-1. 默认方式安装。
+### 1. 默认方式安装。
 复制粘贴以下命令到终端，运行执行即可。全部参数采用默认设置。
 
 cent或者fedora请将apt改yum，脚本写的时候考虑过这些系统。但是未测试，理论上来说可以用。
@@ -26,7 +26,7 @@ cent或者fedora请将apt改yum，脚本写的时候考虑过这些系统。但�
 sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Onekey-deploy_aria2/releases/download/2.0.3/install.sh)
 ```
 
-2. 在部署服务器前设置以自动安装
+### 2. 在部署服务器前设置以自动安装
 以vultr为例。在deploy服务器前，找到script选项，添加一个新的boot脚本。删除原有内容，粘贴以下并保存。
 
 cent或者fedora请将apt改yum，脚本写的时候考虑过这些系统。但是未测试，理论上来说可以用。
@@ -38,7 +38,7 @@ sudo apt install curl -y
 ```
 保存后请再次检查服务器套餐设置，并记得勾选上脚本。点击deploy后，等待5分钟即可。
 
-3. 高级安装。
+### 3. 高级安装。
 先下载脚本。
 ```
 wget https://github.com/Masterchiefm/Onekey-deploy_aria2/releases/download/2.0.3/install.sh
