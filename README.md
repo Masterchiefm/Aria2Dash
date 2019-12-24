@@ -7,13 +7,13 @@ Aria2是一个基于命令行的开源下载工具，支持除了ed2k以及迅�
 然而，其缺点也明显，没有自带的图形管理，从而导致配置繁琐。本脚本就是为了解决这一问题而创作的。现已更新到2.0版，其性质与1.0完全不一样，只需要按最多两次回车键就能完成。对于将要购买新VPS的朋友，只需按照以下教程在初始化脚本中添加两行代码即可。
 
 ## 特性
-1. 整合了File Browser的安装，使文件管理无需再通过ftp或者ssh进入服务器中操作。FileBrowser运行端口为8080,后期将考虑设为可修改。
+1. 整合了[File Browser](https://filebrowser.xyz)的安装，使文件管理无需再通过ftp或者ssh进入服务器中操作。FileBrowser运行端口为8080,后期将考虑设为可修改。
 
 2. 将Aria2c与FileBrowser添加进systemctl，并开机启动。
 
-3. Aria2每次启动的时候会更新tracker，使bt下载更高效。
+3. Aria2每次启动的时候会更新tracker，使bt下载更高效。tracker来源[tracker](https://raw.githubusercontent.com/ngosang/trackerslist)
 
-4. 瞎改了AriaNg的网页管理界面，添加了FileBrowser的入口以管理文件，以及直接进入文件目录的入口。Aria2密钥默认为1234，可在安装时另外指定。
+4. 瞎改了[AriaNg](https://github.com/mayswind/AriaNg)网页管理界面，添加了FileBrowser的入口以管理文件，以及直接进入文件目录的入口。Aria2密钥默认为1234，可在安装时另外指定。
 
 
 ## 安装
@@ -86,9 +86,8 @@ sudo service aria2 stop
 
 
 ## 例子
-[moqiqin.cn](http://moqiqin.cn/lixian)
+[moqiqin.cn/lixian](https://moqiqin.cn/lixian)
 
 其实就是搞个脚本把下面两个东西凑在一起用。
-[AriaNg](https://github.com/mayswind/AriaNg) 和 [Aria2](https://github.com/aria2/aria2)
 
 
