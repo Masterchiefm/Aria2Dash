@@ -64,6 +64,7 @@ bash ./install.sh -a n -d /var/web -p 1234567
 
 
 ## 启动
+脚本运行完成后，aria2与filebrowser均已自动启动。当然你也可以日后对其运行状态进行调整。
 ssh 登录进终端后，输入：
 ```
 #启动
