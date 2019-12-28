@@ -1,4 +1,4 @@
-# Script of Onekey-deploy aria2
+# Aria2Dash: A Convenion Script of Quickly Deploying aria2.
 # 一键脚本，设置带Web管理前端的Aria2下载工具
 
 ## 关于此脚本
