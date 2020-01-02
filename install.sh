@@ -72,25 +72,25 @@ $cmd2
 tmp="/tmp/Onekey-deploy_aria2"
 sudo rm -rf $tmp
 sudo git clone https://github.com/Masterchiefm/Onekey-deploy_aria2.git $tmp
-sudo rm -rf $dir/lixian
+sudo rm -rf $dir/ariang
 sudo rm -rf $dir/downloads
-sudo mkdir -p $dir/lixian 
+sudo mkdir -p $dir/ariang
 sudo mkdir -p $dir/downloads
-sudo unzip $tmp/*.zip -d $dir/lixian
-sudo chmod 777 -R $dir/lixian
+sudo unzip $tmp/*.zip -d $dir/ariang
+sudo chmod 777 -R $dir/ariang
 link="<a href="http://$ip:8080" target="blank">"
-cat $dir/lixian/head.html > $dir/lixian/index.html
-echo $link >> $dir/lixian/index.html
-cat $dir/lixian/foot.html >> $dir/lixian/index.html
+cat $dir/ariang/head.html > $dir/ariang/index.html
+echo $link >> $dir/ariang/index.html
+cat $dir/ariang/foot.html >> $dir/ariang/index.html
 #sudo rm -rf $dir/index.html
 
 #沃日，为啥一直bug。。。
 ip=$(curl -s https://ipinfo.io/ip)
 dir="/var/www/html"
 link="<a href="http://$ip:8080" target="blank">"
-sudo cat $dir/lixian/head.html > $dir/lixian/index.html
-sudo echo $link >> $dir/lixian/index.html
-sudo cat $dir/lixian/foot.html >> $dir/lixian/index.html
+sudo cat $dir/ariang/head.html > $dir/ariang/index.html
+sudo echo $link >> $dir/ariang/index.html
+sudo cat $dir/ariang/foot.html >> $dir/ariang/index.html
 #安装FileBrowser
 curl -fsSL https://filebrowser.xyz/get.sh | bash
 
