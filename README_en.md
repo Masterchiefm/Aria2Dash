@@ -97,4 +97,4 @@ You can manage all your files using file browser, which allows you delete, uploa
 ## My downloader:
 [moqiqin.cn/lixian](https://moqiqin.cn/lixian)
 
-Please click the "START" for me, Thank you!
+Please click the "STAR" for me, Thank you!
