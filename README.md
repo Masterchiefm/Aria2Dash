@@ -1,4 +1,5 @@
 # Aria2Dash: A Convenion Script of Quickly Deploying aria2.
+[The English version README is here](https://github.com/Masterchiefm/Aria2Dash/blob/master/README_en.md)
 # 一键脚本，设置带Web管理前端的Aria2下载工具
 
 ## 关于此脚本
@@ -13,7 +14,7 @@ Aria2是一个基于命令行的开源下载工具，支持除了ed2k以及迅�
 
 3. Aria2每次启动的时候会更新tracker，使bt下载更高效。tracker来源[tracker](https://raw.githubusercontent.com/ngosang/trackerslist)
 
-4. 瞎改了[AriaNg](https://github.com/mayswind/AriaNg)网页管理界面，添加了FileBrowser的入口以管理文件，以及直接进入文件目录的入口。Aria2密钥默认为1234，可在安装时另外指定。
+4. 瞎改了[AriaNg](https://github.com/mayswind/AriaNg)网页管理界面，添加了FileBrowser的入口以管理文件，以及直接进入文件目录的入口。Aria2密钥默认为1234，可在安装时另外指定。输入http://你的ip/ariang  即可访问。
 
 
 ## 安装
