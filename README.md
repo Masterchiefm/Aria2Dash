@@ -1,5 +1,9 @@
 # Aria2Dash: A Convenion Script of Quickly Deploying aria2.
-[The English version README is here](https://github.com/Masterchiefm/Aria2Dash/blob/master/README_en.md)
+## About This
+Aria2 is a command-line based multi-thread downloader, which supports http, metalink, Bt and many other download protocals. Most importantly, it can be controled remotely, making it possible for us to use it withou opening ssh client. 
+
+However, its comman-line feature makes it difficult for most people to deploy it. When I want to use Aria on a new server, I had to spend plenty of time to configurate. What a wast of time! So I wrote this script to make it convient for my fist booting a new server.
+[The full English version README is here](https://github.com/Masterchiefm/Aria2Dash/blob/master/README_en.md)
 # 一键脚本，设置带Web管理前端的Aria2下载工具
 
 ## 关于此脚本
