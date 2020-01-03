@@ -78,7 +78,7 @@ sudo mkdir -p $dir/ariang
 sudo mkdir -p $dir/downloads
 sudo unzip $tmp/*.zip -d $dir/ariang
 sudo chmod 777 -R $dir/ariang
-link="<a href="http://$ip:8080/var/www/html" target="blank">"
+link="<a href="http://$ip:8080/files/var/www/html" target="blank">"
 cat $dir/ariang/head.html > $dir/ariang/index.html
 echo $link >> $dir/ariang/index.html
 cat $dir/ariang/foot.html >> $dir/ariang/index.html
@@ -87,7 +87,7 @@ cat $dir/ariang/foot.html >> $dir/ariang/index.html
 #沃日，为啥一直bug。。。
 ip=$(curl -s https://ipinfo.io/ip)
 dir="/var/www/html"
-link="<a href="http://$ip:8080/var/www/html" target="blank">"
+link="<a href="http://$ip:8080/files/var/www/html" target="blank">"
 sudo cat $dir/ariang/head.html > $dir/ariang/index.html
 sudo echo $link >> $dir/ariang/index.html
 sudo cat $dir/ariang/foot.html >> $dir/ariang/index.html
