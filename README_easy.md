@@ -9,19 +9,19 @@
  可是手机没有下载工具，迅雷没会员，巨慢。所以有了这个教程，做一个离线下載器，离线完再取回来。速度高达22m/s！！！爽！
 
  ![0](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/0.jpg)
- 点下面进入vultr注册可以让我获得优惠，求你了！你也不会亏。
+ 点下面图进入vultr注册可以让我获得优惠，求你了！你也不会亏。
  --------
 <a href="https://www.vultr.com/?ref=8126287"><img src="https://www.vultr.com/media/banners/banner_300x250.png" width="300" height="250"></a>
 --------------
-如果你很有钱，点这里充50美金可以获得25美金优惠
+如果你很有钱，点下图充50美金可以获得25美金优惠
 -------------
 
 <a href="https://www.vultr.com/?ref=8154695-4F"><img src="https://www.vultr.com/media/banners/banner_468x60.png" width="468" height="60"></a>
  ![1](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/1.jpg)
-点下面进入vultr注册可以让我获得优惠，求你了！你也不会亏。-------
+点下面图进入vultr注册可以让我获得优惠，求你了！你也不会亏。-------
 <a href="https://www.vultr.com/?ref=8126287"><img src="https://www.vultr.com/media/banners/banner_300x250.png" width="300" height="250"></a>
 --------------
-如果你很有钱，点这里充50美金可以获得25美金优惠
+如果你很有钱，点下图充50美金可以获得25美金优惠
 <a href="https://www.vultr.com/?ref=8154695-4F"><img src="https://www.vultr.com/media/banners/banner_468x60.png" width="468" height="60"></a>
 ![2](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/2.jpg)
 
