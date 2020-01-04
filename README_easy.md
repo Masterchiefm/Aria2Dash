@@ -9,19 +9,13 @@
  可是手机没有下载工具，迅雷没会员，巨慢。所以有了这个教程，做一个离线下載器，离线完再取回来。速度高达22m/s！！！爽！
 
  ![0](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/0.jpg)
- 点下面图进入vultr注册可以让我获得优惠，求你了！你也不会亏。
- --------
-<a href="https://www.vultr.com/?ref=8126287"><img src="https://www.vultr.com/media/banners/banner_300x250.png" width="300" height="250"></a>
---------------
-如果你很有钱，点下图充50美金可以获得25美金优惠
--------------
-
-<a href="https://www.vultr.com/?ref=8154695-4F"><img src="https://www.vultr.com/media/banners/banner_468x60.png" width="468" height="60"></a>
+ 
+这张图下面附有vultr的注册地址和简单的教程，点击去注册可以得点优惠吧，我也有点奖励。不会让你吃亏。当然，你不用vultr也可以，类似的用法。不过这里将以vultr为例子。
  ![1](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/1.jpg)
 点下面图进入vultr注册可以让我获得优惠，求你了！你也不会亏。-------
 <a href="https://www.vultr.com/?ref=8126287"><img src="https://www.vultr.com/media/banners/banner_300x250.png" width="300" height="250"></a>
 --------------
-如果你很有钱，点下图充50美金可以获得25美金优惠
+如果你很有钱，点下图去注册并充50美金可以获得25美金优惠。优惠是什么方式我忘了，进去看看吧。建议就10美金先试试，大约70块钱而已。还可以拿来自己挂梯子。不过这里不提供梯子教程。
 <a href="https://www.vultr.com/?ref=8154695-4F"><img src="https://www.vultr.com/media/banners/banner_468x60.png" width="468" height="60"></a>
 
 -----------
