@@ -4,7 +4,7 @@ Aria2 is a command-line based multi-thread downloader, which supports http, meta
 
 However, its comman-line feature makes it difficult for most people to deploy it. When I want to use Aria on a new server, I had to spend plenty of time to configurate. What a wast of time! So I wrote this script to make it convient for my fist booting a new server.
 [The full English version README is here](https://github.com/Masterchiefm/Aria2Dash/blob/master/README_en.md)
-[小白请看这里]()
+[小白请看这里](https://github.com/Masterchiefm/Aria2Dash/blob/master/README_easy.md)
 # 一键脚本，设置带Web管理前端的Aria2下载工具
 
 ## 关于此脚本
