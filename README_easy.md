@@ -10,16 +10,19 @@
 
  ![0](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/0.jpg)
  点下面进入vultr注册可以让我获得优惠，求你了！你也不会亏。
-<a href="https://www.vultr.com/?ref=8126287"><img src="https://www.vultr.com/media/banners/banner_160x600.png" width="160" height="600"></a>
+ --------
+<a href="https://www.vultr.com/?ref=8126287"><img src="https://www.vultr.com/media/banners/banner_300x250.png" width="300" height="250"></a>
 --------------
 如果你很有钱，点这里充50美金可以获得25美金优惠
-<a href="https://www.vultr.com/?ref=8154695-4F"><img src="https://www.vultr.com/media/banners/banner_160x600.png" width="160" height="600"></a>
+-------------
+
+<a href="https://www.vultr.com/?ref=8154695-4F"><img src="https://www.vultr.com/media/banners/banner_468x60.png" width="468" height="60"></a>
  ![1](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/1.jpg)
-点下面进入vultr注册可以让我获得优惠，求你了！你也不会亏。
+点下面进入vultr注册可以让我获得优惠，求你了！你也不会亏。-------
+<a href="https://www.vultr.com/?ref=8126287"><img src="https://www.vultr.com/media/banners/banner_300x250.png" width="300" height="250"></a>
 --------------
 如果你很有钱，点这里充50美金可以获得25美金优惠
-<a href="https://www.vultr.com/?ref=8154695-4F"><img src="https://www.vultr.com/media/banners/banner_160x600.png" width="160" height="600"></a>
-<a href="https://www.vultr.com/?ref=8126287"><img src="https://www.vultr.com/media/banners/banner_160x600.png" width="160" height="600"></a>
+<a href="https://www.vultr.com/?ref=8154695-4F"><img src="https://www.vultr.com/media/banners/banner_468x60.png" width="468" height="60"></a>
 ![2](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/2.jpg)
 
 ![3](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/3.jpg)
