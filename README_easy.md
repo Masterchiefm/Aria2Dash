@@ -38,7 +38,7 @@
 sudo apt install curl -y
 
  bash <(curl  -s  -L  https://hell.flytohell.tk/script/install.sh)
-
+#Done.
 ```
 ![6](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/6.jpg)
 
