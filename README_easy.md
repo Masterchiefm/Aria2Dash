@@ -23,6 +23,11 @@
 --------------
 如果你很有钱，点下图充50美金可以获得25美金优惠
 <a href="https://www.vultr.com/?ref=8154695-4F"><img src="https://www.vultr.com/media/banners/banner_468x60.png" width="468" height="60"></a>
+
+-----------
+![2](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/a.jpg)
+![2](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/b.jpg)
+![2](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/c.jpg)
 ![2](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/2.jpg)
 
 ![3](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/3.jpg)
