@@ -11,7 +11,9 @@
  ![0](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/0.jpg)
  
 这张图下面附有vultr的注册地址和简单的教程，点击去注册可以得点优惠吧，我也有点奖励。不会让你吃亏。当然，你不用vultr也可以，类似的用法。不过这里将以vultr为例子。Vultr有个好处就是访问不用挂梯子，从我下面给的链接点进去就可以。对了，进去后再确认是vultr.com
- ![1](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/1.jpg)
+ 
+输入你的邮箱和密码，点击create account就注册好账号了。
+![1](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/1.jpg)
 点下面图进入vultr注册可以让我获得优惠，求你了！你也不会亏。-------
 <a href="https://www.vultr.com/?ref=8126287"><img src="https://www.vultr.com/media/banners/banner_300x250.png" width="300" height="250"></a>
 --------------
