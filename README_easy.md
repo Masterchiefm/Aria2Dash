@@ -1,6 +1,6 @@
  # 自建支持bt，磁力等下载方式的离线下载服务器。（什么都不懂的小白都能用）
  ## 前言
- 本文受众为小白，想获取更详细信息请访问[这里](https://github.com/Masterchiefm/Aria2Dash)
+ 本文受众为小白，不是小白的请看[这里](https://github.com/Masterchiefm/Aria2Dash)
 
  ## 正文
  ** 正文将全部以图片形式展示。若加载不出图片，请挂梯子。
