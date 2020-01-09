@@ -116,9 +116,9 @@ sudo chmod 777  /etc/init.d/aria2c
 sudo chmod 777  /etc/init.d/filebrowser
 sudo systemctl daemon-reload
 sudo update-rc.d   filebrowser   enable
-sudo update-rc.d filebrowser defaults 90
+
 sudo update-rc.d   aria2c  enable
-sudo update-rc.d aria2c defaults 90
+
 
 sudo service aria2c restart
 sudo service filebrowser restart
