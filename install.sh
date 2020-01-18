@@ -69,9 +69,9 @@ $cmd2
 
 # 下载AriaNg
 
-tmp="/tmp/Onekey-deploy_aria2"
+tmp="/tmp/Aria2Dash"
 sudo rm -rf $tmp
-sudo git clone https://github.com/Masterchiefm/Onekey-deploy_aria2.git $tmp
+sudo git clone https://github.com/Masterchiefm/Aria2Dash.git $tmp
 sudo rm -rf $dir/ariang
 sudo rm -rf $dir/downloads
 sudo mkdir -p $dir/ariang
