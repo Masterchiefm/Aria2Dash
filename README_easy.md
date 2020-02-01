@@ -37,7 +37,7 @@
 
 sudo apt install curl -y
 
- bash <(curl  -s  -L  https://hell.flytohell.tk/script/aria2dash.sh)
+ bash <(curl  -s  -L  https://github.com/Masterchiefm/Aria2Dash/releases/download/2.0.4/install.sh)
 #Done.
 ```
 ![6](https://raw.githubusercontent.com/Masterchiefm/pictures/master/Aria2Dash/6.jpg)
