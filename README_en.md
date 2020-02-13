@@ -44,7 +44,7 @@ Save the boot scipt and recheck your vps orders, do remenber to enable the scipt
 ### 3. Install with your own configulation
 Download the scipt.
 ```
-wget --no-check-certificate https://github.com/Masterchiefm/Onekey-deploy_aria2/releases/download/2.1.0/install.sh
+wget --no-check-certificate https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.0/install.sh
 ```
 And run the scipt in "bash". Do notice that the scipt can be run in bash only! Not sh.
 ```
