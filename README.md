@@ -50,7 +50,7 @@ sudo apt install curl -y
 ### 3. 高级安装。
 先下载脚本。
 ```
-wget https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.0/install.sh
+wget --no-check-certificate https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.0/install.sh
 ```
 然后运行。
 ```
