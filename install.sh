@@ -115,8 +115,10 @@ sudo cp $tmp/filebrowser /etc/init.d/
 sudo chmod 777  /etc/init.d/aria2c
 sudo chmod 777  /etc/init.d/filebrowser
 sudo systemctl daemon-reload
-sudo update-rc.d   filebrowser   enable
 
+/lib/systemd/systemd-sysv-install enable aria2c
+/lib/systemd/systemd-sysv-install enable filebrowser 
+sudo update-rc.d   filebrowser   enable
 sudo update-rc.d   aria2c  enable
 
 
