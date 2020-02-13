@@ -102,8 +102,8 @@ sudo rm -rf /root/.aria2
 sudo mkdir -p /root/.aria2
 sudo rm -rf /root/.aria2/*
 sudo touch /root/.aria2/aria2.session
-sudo mv /tmp/Onekey-deploy_aria2/aria2.conf /root/.aria2/
-sudo mv /tmp/Onekey-deploy_aria2/updatetracker.sh /root/.aria2/
+sudo mv $tmp/aria2.conf /root/.aria2/
+sudo mv $tmp/updatetracker.sh /root/.aria2/
 sudo rm -rf ./install.sh
 clear
 secret="rpc-secret=$p"
