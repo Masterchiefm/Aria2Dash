@@ -31,7 +31,7 @@ Aria2是一个基于命令行的开源下载工具，支持除了ed2k以及迅�
 
 cent或者fedora请将apt改yum，脚本写的时候考虑过这些系统。但是未测试，理论上来说可以用。
 ```
-sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Onekey-deploy_aria2/releases/download/2.0.3/install.sh)
+sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.0/install.sh)
 ```
 
 ### 2. 在部署服务器前设置以自动安装
