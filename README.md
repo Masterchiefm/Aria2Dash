@@ -42,14 +42,15 @@ cent或者fedora请将apt改yum，脚本写的时候考虑过这些系统。但�
 #!/bin/bash
 
 sudo apt install curl -y
- bash <(curl -s -L https://github.com/Masterchiefm/Onekey-deploy_aria2/releases/download/2.0.3/install.sh)
+ bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.0/install.sh)
+ # Done！
 ```
 保存后请再次检查服务器套餐设置，并记得勾选上脚本。点击deploy后，等待5分钟即可。
 
 ### 3. 高级安装。
 先下载脚本。
 ```
-wget https://github.com/Masterchiefm/Onekey-deploy_aria2/releases/download/2.0.3/install.sh
+wget https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.0/install.sh
 ```
 然后运行。
 ```
