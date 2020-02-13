@@ -36,7 +36,8 @@ If you are using Cent or Fedora, just change "apt" to "yum".
 #!/bin/bash
 
 sudo apt install curl -y
- bash <(curl -s -L https://github.com/Masterchiefm/Onekey-deploy_aria2/releases/download/2.0.3/install.sh)
+ bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.0/install.sh)
+ # Done！
 ```
 Save the boot scipt and recheck your vps orders, do remenber to enable the scipt. Then deploy the server. 
 
