@@ -25,9 +25,10 @@ echo "aria2 stoped."
 restart)
  
 killall aria2c
+sudo -u root bash /root/.aria2/updatetracker.sh
 sudo -u root aria2c --conf-path=/root/.aria2/aria2.conf -D
 echo "aria2 restarted."
-sudo -u root bash /root/.aria2/updatetracker.sh
+
 ;;
 esac
 exit
