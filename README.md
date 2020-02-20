@@ -31,7 +31,7 @@ Aria2是一个基于命令行的开源下载工具，支持除了ed2k以及迅�
 
 cent或者fedora请将apt改yum，脚本写的时候考虑过这些系统。但是未测试，理论上来说可以用。
 ```
-sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.0/install.sh)
+sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.1/install.sh)
 ```
 
 ### 2. 在部署服务器前设置以自动安装
@@ -42,7 +42,7 @@ cent或者fedora请将apt改yum，脚本写的时候考虑过这些系统。但�
 #!/bin/bash
 
 sudo apt install curl -y
- bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.0/install.sh)
+ bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.1/install.sh)
  # Done！
 ```
 保存后请再次检查服务器套餐设置，并记得勾选上脚本。点击deploy后，等待5分钟即可。
@@ -50,7 +50,7 @@ sudo apt install curl -y
 ### 3. 高级安装。
 先下载脚本。
 ```
-wget --no-check-certificate https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.0/install.sh
+wget --no-check-certificate https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.1/install.sh
 ```
 然后运行。
 ```
@@ -77,16 +77,15 @@ bash ./install.sh -a n -d /var/web -p 1234567
 ssh 登录进终端后，输入：
 ```
 #启动
-sudo service aria2 start
+sudo systemctl start aria2
 
 #重新启动
-sudo service aria2 restart
+sudo systemctl restart aria2 
 
 #查看状态
-sudo service aria2 status
-
+sudo systemctl status aria2
 #关闭
-sudo service aria2 stop
+sudo systemctl stop aria2 
 ```
 
 ## 管理文件
