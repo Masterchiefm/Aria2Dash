@@ -115,6 +115,7 @@ if [ $f = "y" ]  ;  then
 	 sudo systemctl restart filebrowser
 	else
         sudo chkconfig filebrowser on #Cent OS用这个
+	sudo systemctl restart filebrowser
 	fi
    
     
