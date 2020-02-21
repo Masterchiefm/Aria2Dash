@@ -29,21 +29,33 @@ Aria2是一个基于命令行的开源下载工具，支持除了ed2k以及迅�
 ### 1. 默认方式安装。
 复制粘贴以下命令到终端，运行执行即可。全部参数采用默认设置。
 
-cent或者fedora请将apt改yum，脚本写的时候考虑过这些系统。但是未测试，理论上来说可以用。
+
 ```
-sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.1/install.sh)
+#Ubuntu用这个
+sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/blob/master/Aria2Dash.sh)
+```
+```
+#Cent OS用这个
+sudo yum install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/blob/master/Aria2Dash.sh)
 ```
 
 ### 2. 在部署服务器前设置以自动安装
 以vultr为例。在deploy服务器前，找到script选项，添加一个新的boot脚本。删除原有内容，粘贴以下并保存。
 
-cent或者fedora请将apt改yum，脚本写的时候考虑过这些系统。但是未测试，理论上来说可以用。
+
 ```
 #!/bin/bash
-
 sudo apt install curl -y
- bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.1/install.sh)
- # Done！
+ bash <(curl -s -L  https://github.com/Masterchiefm/Aria2Dash/blob/master/Aria2Dash.sh)
+ # Done！这是Ubuntu的脚本
+```
+
+
+```
+#!/bin/bash
+sudo yum install curl -y
+ bash <(curl -s -L  https://github.com/Masterchiefm/Aria2Dash/blob/master/Aria2Dash.sh)
+ # Done！这是Cent OS的脚本
 ```
 保存后请再次检查服务器套餐设置，并记得勾选上脚本。点击deploy后，等待5分钟即可。
 
