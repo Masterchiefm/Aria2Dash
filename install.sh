@@ -2,34 +2,40 @@
 sudo rm -rf ./install.sh
 cd /
 
-#Aria2密码
-p=1234
+#预设变量
+    #Aria2密码
+    p=1234
+    
+    #是否安装Apache2
+    a=y
 
-#是否安装Apache2
-a=y
-
-#默认网页路径
-dir="/var/www/html"
-d=$dir
-
-if [ $d != $dir ] ; then
-    dir=$d
-    echo !
-fi
-
-
-while getopts ":p:a:d:h:" opt
+    #默认网页路径
+    dir="/var/www/html"
+    d=$dir #预先给d赋值，免得下面要是不输入东西的话判断报错
+    
+    #filebrowser,因为GFW，国内VPS可能装不上,默认是可以装
+    f=y
+    
+while getopts ":p:a:d:f:h:" opt
 do
     case $opt in
+        #aria2自定密码
         p)
         p=$OPTARG
         ;;
+        #是否安装apache/httpd
         a)
         a=$OPTARG
         ;;
+        #指定网页根目录
         d)
         d=$OPTARG
         ;;
+        #是否安装filebrowser，国内建议不装
+        f)
+        f=$OPTARG
+        ;;
+        #帮助，暂时不搞
         h)
         h=$OPTARG
         ;;
@@ -40,20 +46,25 @@ do
     esac
 done
 
+#若用户输入网页根目录与预设不一致，则将dir变量值改为用户设置的
+if [ $d != $dir ] ; then
+	echo "d!=dir"
+	dir=$d
+fi
 
+#判断系统是debian，Ubuntu，Fedora，cent还是手机的turmux（咕）
 
-#判断系统是debian，Ubuntu，Fedora，cent还是手机的turmux
-
-if [[  $(command -v sudo apt)  ]] ; then
+if [[  $(command -v apt)  ]] ; then
         cmd="sudo apt"
 else
         cmd="sudo yum"
+        firewall-cmd --zone=public --add-port=80/tcp --permanent  #cent的防火墙有时候很恶心
 
 fi
 
 
 #安装必要的包
-$cmd update 
+$cmd update -y
 #根据需要，安装Apache2
 if [ $a = "y" ] ; then
     cmd1="$cmd install apache2 -y"
@@ -63,64 +74,58 @@ else
     echo "I will not install apache2."
 fi
 
-#安装必要的
+#其实screen，vim可以不用。。但是我为了自己方便就加上了
 cmd2="$cmd install screen vim aria2 unzip git curl -y"
 $cmd2
 
-# 下载AriaNg
 
+# 下载AriaNg
 tmp="/tmp/Aria2Dash"
 sudo rm -rf $tmp
-sudo git clone https://github.com/Masterchiefm/Aria2Dash.git $tmp
 sudo rm -rf $dir/ariang
 sudo rm -rf $dir/downloads
-sudo mkdir -p $dir/ariang
+
+sudo git clone https://github.com/Masterchiefm/Aria2Dash.git $tmp
+sudo mkdir -p $dir/ariang 
 sudo mkdir -p $dir/downloads
 sudo unzip $tmp/*.zip -d $dir/ariang
 sudo chmod 777 -R $dir/ariang
-link="<a href="http://$ip:8080/files/var/www/html" target="blank">"
-cat $dir/ariang/head.html > $dir/ariang/index.html
-echo $link >> $dir/ariang/index.html
-cat $dir/ariang/foot.html >> $dir/ariang/index.html
-#sudo rm -rf $dir/index.html
 
-#沃日，为啥一直bug。。。
+#将服务器ip填入AriaNg
 ip=$(curl -s https://ipinfo.io/ip)
-dir="/var/www/html"
-link="<a href="http://$ip:8080/files/var/www/html" target="blank">"
+link="<a href="http://$ip:8080" target="blank">"
 sudo cat $dir/ariang/head.html > $dir/ariang/index.html
 sudo echo $link >> $dir/ariang/index.html
 sudo cat $dir/ariang/foot.html >> $dir/ariang/index.html
+
 #安装FileBrowser
-curl -fsSL https://filebrowser.xyz/get.sh | bash
-
-
-
+if [ $f = "y" ]  ;  then
+    curl -fsSL https://filebrowser.xyz/get.sh | bash
+    sudo cp $tmp/filebrowser /etc/init.d/
+    sudo chmod 755  /etc/init.d/filebrowser
+    sudo systemctl daemon-reload
+    sudo update-rc.d filebrowser defaults #Ubuntu用这个
+    sudo chkconfig filebrowser on #Cent OS用这个
+else
+    echo "不安装FileBrowser"
+fi
 
 #开始配置aria2
 sudo rm -rf /root/.aria2
 sudo mkdir -p /root/.aria2
-sudo rm -rf /root/.aria2/*
 sudo touch /root/.aria2/aria2.session
-sudo mv $tmp/aria2.conf /root/.aria2/
-sudo mv $tmp/updatetracker.sh /root/.aria2/
+sudo mv /tmp/Aria2Dash/aria2.conf /root/.aria2/
+sudo mv /tmp/Aria2Dash/updatetracker.sh /root/.aria2/
 sudo rm -rf ./install.sh
-clear
+
 secret="rpc-secret=$p"
 sudo echo $secret >> /root/.aria2/aria2.conf
 
 #设置systemctl
 sudo cp $tmp/aria2c /etc/init.d/
-sudo cp $tmp/filebrowser /etc/init.d/
-sudo chmod 777  /etc/init.d/aria2c
-sudo chmod 777  /etc/init.d/filebrowser
+sudo chmod 755  /etc/init.d/aria2c
 sudo systemctl daemon-reload
-
-/lib/systemd/systemd-sysv-install enable aria2c
-/lib/systemd/systemd-sysv-install enable filebrowser 
-sudo update-rc.d   filebrowser   enable
-sudo update-rc.d   aria2c  enable
-
-
+sudo update-rc.d aria2c defaults #Ubuntu用这个
+sudo chkconfig aria2c on #Cent OS用这个
 sudo service aria2c restart
 sudo service filebrowser restart
