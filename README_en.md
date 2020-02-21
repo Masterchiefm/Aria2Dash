@@ -22,7 +22,7 @@ However, its comman-line feature makes it difficult for most people to deploy it
 Copy the following command lines and run. If you are using Cent or Fedora, just change "apt" to "yum".
 
 ```
-sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Onekey-deploy_aria2/releases/download/2.0.3/install.sh)
+sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/raw/master/Aria2Dash.sh)
 ```
 
 ### 2. Install on a new server.
@@ -36,7 +36,7 @@ If you are using Cent or Fedora, just change "apt" to "yum".
 #!/bin/bash
 
 sudo apt install curl -y
- bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.0/install.sh)
+ bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/raw/master/Aria2Dash.sh)
  # Done！
 ```
 Save the boot scipt and recheck your vps orders, do remenber to enable the scipt. Then deploy the server. 
@@ -44,11 +44,11 @@ Save the boot scipt and recheck your vps orders, do remenber to enable the scipt
 ### 3. Install with your own configulation
 Download the scipt.
 ```
-wget --no-check-certificate https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.0/install.sh
+wget --no-check-certificate https://github.com/Masterchiefm/Aria2Dash/raw/master/Aria2Dash.sh
 ```
 And run the scipt in "bash". Do notice that the scipt can be run in bash only! Not sh.
 ```
-bash ./install.sh -a n -d /diretory/of/ariang -p YOUR_PASSWORD
+bash ./Aria2Dash.sh -a n -d /diretory/of/ariang -p YOUR_PASSWORD
 ```
 
 
@@ -63,7 +63,7 @@ bash ./install.sh -a n -d /diretory/of/ariang -p YOUR_PASSWORD
 This is an example:
 If Jim doesn't want to install Apache2 because he has Nginx and had set Nginx's path to /var/web. Besides, he wants to set the password to "123456". So, he can just simply input the following:
 ```
-bash ./install.sh -a n -d /var/web -p 1234567
+bash ./Aria2Dash.sh -a n -d /var/web -p 1234567
 ```
 
 
@@ -96,6 +96,6 @@ You can manage all your files using file browser, which allows you delete, uploa
 
 
 ## My downloader:
-[moqiqin.cn/lixian](https://moqiqin.cn/lixian)
+[moqiqin.cn/ariang](https://moqiqin.cn/lixian)
 
 Please click the "STAR" for me, Thank you!
