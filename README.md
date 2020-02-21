@@ -32,11 +32,11 @@ Aria2是一个基于命令行的开源下载工具，支持除了ed2k以及迅�
 
 ```
 #Ubuntu用这个
-sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/blob/master/Aria2Dash.sh)
+sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/raw/master/Aria2Dash.sh)
 ```
 ```
 #Cent OS用这个
-sudo yum install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/blob/master/Aria2Dash.sh)
+sudo yum install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/raw/master/Aria2Dash.sh)
 ```
 
 ### 2. 在部署服务器前设置以自动安装
@@ -46,7 +46,7 @@ sudo yum install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Ar
 ```
 #!/bin/bash
 sudo apt install curl -y
- bash <(curl -s -L  https://github.com/Masterchiefm/Aria2Dash/blob/master/Aria2Dash.sh)
+ bash <(curl -s -L  https://github.com/Masterchiefm/Aria2Dash/raw/master/Aria2Dash.sh)
  # Done！这是Ubuntu的脚本
 ```
 
@@ -54,7 +54,7 @@ sudo apt install curl -y
 ```
 #!/bin/bash
 sudo yum install curl -y
- bash <(curl -s -L  https://github.com/Masterchiefm/Aria2Dash/blob/master/Aria2Dash.sh)
+ bash <(curl -s -L  https://github.com/Masterchiefm/Aria2Dash/raw/master/Aria2Dash.sh)
  # Done！这是Cent OS的脚本
 ```
 保存后请再次检查服务器套餐设置，并记得勾选上脚本。点击deploy后，等待5分钟即可。
@@ -62,7 +62,7 @@ sudo yum install curl -y
 ### 3. 高级安装。
 先下载脚本。
 ```
-wget --no-check-certificate https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.1/install.sh
+wget --no-check-certificate https://github.com/Masterchiefm/Aria2Dash/raw/master/Aria2Dash.sh
 ```
 然后运行。
 ```
@@ -106,7 +106,7 @@ sudo systemctl stop aria2
 
 
 ## 例子
-[moqiqin.cn/lixian](https://moqiqin.cn/lixian)
+[moqiqin.cn/lixian](https://moqiqin.cn/ariang)
 
 其实就是搞个脚本把下面两个东西凑在一起用。
 
