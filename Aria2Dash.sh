@@ -97,7 +97,7 @@ sudo mkdir -p $dir/downloads
 sudo unzip $tmp/*.zip -d $dir/ariang
 sudo chmod 777 -R $dir/ariang
 
-echo "将服务器ip填入AriaNg"
+echo "正在获取服务器ip，然后填入AriaNg"
 ip=$(curl -s https://ipinfo.io/ip)
 link="<a href="http://$ip:8080" target="blank">"
 sudo cat $dir/ariang/head.html > $dir/ariang/index.html
