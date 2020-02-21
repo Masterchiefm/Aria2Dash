@@ -1,5 +1,6 @@
 #/bin/bash
-sudo rm -rf ./install.sh
+#Verion:2.1.1
+sudo rm -rf ./Aria2Dash.sh
 cd /
 
 #预设变量
