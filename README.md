@@ -66,7 +66,7 @@ wget --no-check-certificate https://github.com/Masterchiefm/Aria2Dash/raw/master
 ```
 然后运行。
 ```
-bash ./install.sh -a n -d 网页目录 -p aria2密码
+bash ./Aria2Dash.sh -a n -d 网页目录 -p aria2密码
 ```
 注意，只能用bash，不可以用sh。
 
