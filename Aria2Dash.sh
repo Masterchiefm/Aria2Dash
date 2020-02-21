@@ -58,9 +58,11 @@ echo "判断系统是debian，Ubuntu，Fedora，cent还是手机的turmux（咕�
 if [[  $(command -v apt)  ]] ; then
         cmd="sudo apt"
 	echo "Ubuntu/Debian"
+	apache2="apache2"
 else
         cmd="sudo yum"
 	echo "Cent OS"
+	apache2="httpd"
         firewall-cmd --zone=public --add-port=80/tcp --permanent  #cent的防火墙有时候很恶心
 
 fi
@@ -70,7 +72,7 @@ echo "Updatting..."
 $cmd update -y
 echo "根据需要，安装Apache2或者httpd"
 if [ $a = "y" ] ; then
-    cmd1="$cmd install apache2 -y"
+    cmd1="$cmd install $apache2 -y"
     $cmd1
     sudo mv $dir/index.html $dir/index.html0
 else  
