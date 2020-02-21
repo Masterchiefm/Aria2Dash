@@ -101,7 +101,7 @@ sudo cat $dir/ariang/head.html > $dir/ariang/index.html
 sudo echo $link >> $dir/ariang/index.html
 sudo cat $dir/ariang/foot.html >> $dir/ariang/index.html
 
-echo "安装FileBrowser"
+echo "安装FileBrowser,如果国内VPS安装卡在这里，请重新运行并使用 -f n 跳过这一步安装。"
 if [ $f = "y" ]  ;  then
     curl -fsSL https://filebrowser.xyz/get.sh | bash
     sudo cp $tmp/filebrowser /etc/init.d/
