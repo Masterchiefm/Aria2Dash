@@ -72,6 +72,7 @@ echo "Updatting..."
 $cmd update -y
 echo "根据需要，安装Apache2或者httpd"
 if [ $a = "y" ] ; then
+	echo "安装$apache2"
     cmd1="$cmd install $apache2 -y"
     $cmd1
     sudo mv $dir/index.html $dir/index.html0
