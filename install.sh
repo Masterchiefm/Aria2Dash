@@ -52,20 +52,22 @@ if [ $d != $dir ] ; then
 	dir=$d
 fi
 
-#判断系统是debian，Ubuntu，Fedora，cent还是手机的turmux（咕）
+echo "判断系统是debian，Ubuntu，Fedora，cent还是手机的turmux（咕）"
 
 if [[  $(command -v apt)  ]] ; then
         cmd="sudo apt"
+	echo "Ubuntu/Debian"
 else
         cmd="sudo yum"
+	echo "Cent OS"
         firewall-cmd --zone=public --add-port=80/tcp --permanent  #cent的防火墙有时候很恶心
 
 fi
 
 
-#安装必要的包
+echo "Updatting..."
 $cmd update -y
-#根据需要，安装Apache2
+echo "根据需要，安装Apache2或者httpd"
 if [ $a = "y" ] ; then
     cmd1="$cmd install apache2 -y"
     $cmd1
@@ -79,7 +81,7 @@ cmd2="$cmd install screen vim aria2 unzip git curl -y"
 $cmd2
 
 
-# 下载AriaNg
+echo "下载AriaNg"
 tmp="/tmp/Aria2Dash"
 sudo rm -rf $tmp
 sudo rm -rf $dir/ariang
@@ -91,14 +93,14 @@ sudo mkdir -p $dir/downloads
 sudo unzip $tmp/*.zip -d $dir/ariang
 sudo chmod 777 -R $dir/ariang
 
-#将服务器ip填入AriaNg
+echo "将服务器ip填入AriaNg"
 ip=$(curl -s https://ipinfo.io/ip)
 link="<a href="http://$ip:8080" target="blank">"
 sudo cat $dir/ariang/head.html > $dir/ariang/index.html
 sudo echo $link >> $dir/ariang/index.html
 sudo cat $dir/ariang/foot.html >> $dir/ariang/index.html
 
-#安装FileBrowser
+echo "安装FileBrowser"
 if [ $f = "y" ]  ;  then
     curl -fsSL https://filebrowser.xyz/get.sh | bash
     sudo cp $tmp/filebrowser /etc/init.d/
@@ -110,7 +112,7 @@ else
     echo "不安装FileBrowser"
 fi
 
-#开始配置aria2
+echo "开始配置aria2"
 sudo rm -rf /root/.aria2
 sudo mkdir -p /root/.aria2
 sudo touch /root/.aria2/aria2.session
@@ -121,11 +123,11 @@ sudo rm -rf ./install.sh
 secret="rpc-secret=$p"
 sudo echo $secret >> /root/.aria2/aria2.conf
 
-#设置systemctl
+echo "设置systemctl"
 sudo cp $tmp/aria2c /etc/init.d/
 sudo chmod 755  /etc/init.d/aria2c
 sudo systemctl daemon-reload
 sudo update-rc.d aria2c defaults #Ubuntu用这个
 sudo chkconfig aria2c on #Cent OS用这个
-sudo service aria2c restart
-sudo service filebrowser restart
+sudo systemctl restart aria2c
+sudo systemctl restart filebrowser
