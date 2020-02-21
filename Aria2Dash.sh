@@ -101,14 +101,20 @@ sudo cat $dir/ariang/head.html > $dir/ariang/index.html
 sudo echo $link >> $dir/ariang/index.html
 sudo cat $dir/ariang/foot.html >> $dir/ariang/index.html
 
-echo "安装FileBrowser,如果国内VPS安装卡在这里，请重新运行并使用 -f n 跳过这一步安装。"
+echo "安装FileBrowser,如果国内服务器安装卡在这里，请重新运行并使用 -f n 跳过这一步安装。"
 if [ $f = "y" ]  ;  then
     curl -fsSL https://filebrowser.xyz/get.sh | bash
     sudo cp $tmp/filebrowser /etc/init.d/
     sudo chmod 755  /etc/init.d/filebrowser
     sudo systemctl daemon-reload
-    sudo update-rc.d filebrowser defaults #Ubuntu用这个
-    sudo chkconfig filebrowser on #Cent OS用这个
+    	if [[  $(command -v apt)  ]] ; then
+         sudo update-rc.d filebrowser defaults #Ubuntu用这个
+	 sudo systemctl restart filebrowser
+	else
+        sudo chkconfig filebrowser on #Cent OS用这个
+	fi
+   
+    
 else
     echo "不安装FileBrowser"
 fi
@@ -128,8 +134,19 @@ echo "设置systemctl"
 sudo cp $tmp/aria2c /etc/init.d/
 sudo chmod 755  /etc/init.d/aria2c
 sudo systemctl daemon-reload
-sudo update-rc.d aria2c defaults #Ubuntu用这个
-sudo chkconfig aria2c on #Cent OS用这个
+
+if [[  $(command -v apt)  ]] ; then
+        sudo update-rc.d aria2c defaults #Ubuntu用这个
+	echo "Ubuntu/Debian"
+else
+        sudo chkconfig aria2c on #Cent OS用这个
+	echo "Cent OS"
+        firewall-cmd --zone=public --add-port=6800/tcp --permanent  #cent的防火墙有时候很恶心
+
+fi
+
+
+
 sudo systemctl restart aria2c
-sudo systemctl restart filebrowser
+
 
