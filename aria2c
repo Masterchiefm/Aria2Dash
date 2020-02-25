@@ -13,7 +13,7 @@ start)
  
  echo -n "Starting Aria2c"
  sudo -u root bash /root/.aria2/updatetracker.sh
- sudo aria2c --conf-path=/root/.aria2/aria2.conf -D
+ aria2c --conf-path=/root/.aria2/aria2.conf -D
 ;;
 stop)
  
@@ -24,7 +24,7 @@ restart)
  echo -n "Restarting Aria2c"
  killall aria2c
  sudo -u root bash /root/.aria2/updatetracker.sh
- sudo aria2c --conf-path=/root/.aria2/aria2.conf -D
+aria2c --conf-path=/root/.aria2/aria2.conf -D
 ;;
 esac
 exit
