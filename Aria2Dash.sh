@@ -103,10 +103,11 @@ link="<a href="http://$ip:8080" target="blank">"
 sudo cat $dir/ariang/head.html > $dir/ariang/index.html
 sudo echo $link >> $dir/ariang/index.html
 sudo cat $dir/ariang/foot.html >> $dir/ariang/index.html
+sudo echo $link >> $dir/filebrowser.html
 
 echo "安装FileBrowser,如果国内服务器安装卡在这里，请重新运行并使用 -f n 跳过这一步安装。"
 if [ $f = "y" ]  ;  then
-    curl -fsSL https://filebrowser.xyz/get.sh | bash
+    bash $tmp/get-filebrowser.sh
     sudo cp $tmp/filebrowser /etc/init.d/
     sudo chmod 755  /etc/init.d/filebrowser
     sudo systemctl daemon-reload
