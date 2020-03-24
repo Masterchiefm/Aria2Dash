@@ -58,9 +58,11 @@ echo "判断系统是debian，Ubuntu，Fedora，cent还是手机的turmux（咕�
 if [[  $(command -v apt)  ]] ; then
         cmd="sudo apt"
 	echo "Ubuntu/Debian"
+	apache2="apache2"
 else
         cmd="sudo yum"
 	echo "Cent OS"
+	apache2="httpd"
         firewall-cmd --zone=public --add-port=80/tcp --permanent  #cent的防火墙有时候很恶心
 
 fi
@@ -70,7 +72,8 @@ echo "Updatting..."
 $cmd update -y
 echo "根据需要，安装Apache2或者httpd"
 if [ $a = "y" ] ; then
-    cmd1="$cmd install apache2 -y"
+	echo "安装$apache2"
+    cmd1="$cmd install $apache2 -y"
     $cmd1
     sudo mv $dir/index.html $dir/index.html0
 else  
@@ -94,21 +97,29 @@ sudo mkdir -p $dir/downloads
 sudo unzip $tmp/*.zip -d $dir/ariang
 sudo chmod 777 -R $dir/ariang
 
-echo "将服务器ip填入AriaNg"
+echo "正在获取服务器ip，然后填入AriaNg"
 ip=$(curl -s https://ipinfo.io/ip)
 link="<a href="http://$ip:8080" target="blank">"
 sudo cat $dir/ariang/head.html > $dir/ariang/index.html
 sudo echo $link >> $dir/ariang/index.html
 sudo cat $dir/ariang/foot.html >> $dir/ariang/index.html
+sudo echo $link >> $dir/filebrowser.html
 
-echo "安装FileBrowser,如果国内VPS安装卡在这里，请重新运行并使用 -f n 跳过这一步安装。"
+echo "安装FileBrowser,如果国内服务器安装卡在这里，请重新运行并使用 -f n 跳过这一步安装。"
 if [ $f = "y" ]  ;  then
-    curl -fsSL https://filebrowser.xyz/get.sh | bash
+    bash $tmp/get-filebrowser.sh
     sudo cp $tmp/filebrowser /etc/init.d/
     sudo chmod 755  /etc/init.d/filebrowser
     sudo systemctl daemon-reload
-    sudo update-rc.d filebrowser defaults #Ubuntu用这个
-    sudo chkconfig filebrowser on #Cent OS用这个
+    	if [[  $(command -v apt)  ]] ; then
+         sudo update-rc.d filebrowser defaults #Ubuntu用这个
+	 sudo systemctl restart filebrowser
+	else
+        sudo chkconfig filebrowser on #Cent OS用这个
+	sudo systemctl restart filebrowser
+	fi
+   
+    
 else
     echo "不安装FileBrowser"
 fi
@@ -128,7 +139,19 @@ echo "设置systemctl"
 sudo cp $tmp/aria2c /etc/init.d/
 sudo chmod 755  /etc/init.d/aria2c
 sudo systemctl daemon-reload
-sudo update-rc.d aria2c defaults #Ubuntu用这个
-sudo chkconfig aria2c on #Cent OS用这个
+
+if [[  $(command -v apt)  ]] ; then
+        sudo update-rc.d aria2c defaults #Ubuntu用这个
+	echo "Ubuntu/Debian"
+else
+        sudo chkconfig aria2c on #Cent OS用这个
+	echo "Cent OS"
+        firewall-cmd --zone=public --add-port=6800/tcp --permanent  #cent的防火墙有时候很恶心
+
+fi
+
+
+
 sudo systemctl restart aria2c
-sudo systemctl restart filebrowser
+
+
