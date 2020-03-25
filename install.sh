@@ -76,7 +76,7 @@ if [ $a = "y" ] ; then
     cmd1="$cmd install $apache2 -y"
     $cmd1
     sudo mv $dir/index.html $dir/index.html0
-    systemctl reload $apache2 
+    systemctl restart $apache2 
 else  
     echo "I will not install apache2."
 fi
