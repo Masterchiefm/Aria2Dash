@@ -11,20 +11,20 @@
 case "$1" in
 start)
  
- echo -n "Starting Aria2c"
+ echo -n "已开启Aria2c"
  sudo -u root bash /root/.aria2/updatetracker.sh
  aria2c --conf-path=/root/.aria2/aria2.conf -D
 ;;
 stop)
  
- echo -n "Killing Aria2c"
+ echo -n "已关闭Aria2c"
  killall aria2c
 ;;
 restart)
- echo -n "Restarting Aria2c"
+ 
  killall aria2c
  sudo -u root bash /root/.aria2/updatetracker.sh
-aria2c --conf-path=/root/.aria2/aria2.conf -D
+ aria2c --conf-path=/root/.aria2/aria2.conf -D
 ;;
 esac
 exit
