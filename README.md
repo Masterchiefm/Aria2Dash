@@ -50,7 +50,7 @@ sudo apt install curl -y
  # Done！这是Ubuntu的脚本
 ```
 
-
+虽然本脚本可以在cent运行，但是cent因为它的源里没有aria2c软件包，只能通过编译安装的方式安装aria2c，也就意味着安装时长高达半小时。不推荐使用。也许后期我会想想办法。而且cent的防火墙太难受了，头大。还是用ubuntu吧
 ```
 #!/bin/bash
 sudo yum install curl -y
