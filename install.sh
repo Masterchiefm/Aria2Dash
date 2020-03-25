@@ -76,6 +76,7 @@ if [ $a = "y" ] ; then
     cmd1="$cmd install $apache2 -y"
     $cmd1
     sudo mv $dir/index.html $dir/index.html0
+    systemctl reload $apache2 
 else  
     echo "I will not install apache2."
 fi
@@ -83,7 +84,15 @@ fi
 #其实screen，vim可以不用。。但是我为了自己方便就加上了
 cmd2="$cmd install screen vim  unzip git curl -y"
 $cmd2
-cmd3="$cmd install aria2 -y"
+cmd3="$cmd install vim  -y"
+$cmd3
+cmd3="$cmd install unzip  -y"
+$cmd3
+cmd3="$cmd install git  -y"
+$cmd3
+cmd3="$cmd install curl  -y"
+$cmd3
+cmd3="$cmd install aria2  -y"
 $cmd3
 
 
