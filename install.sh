@@ -164,5 +164,5 @@ fi
 
 
 sudo systemctl restart aria2c
-
+systemctl restart firewalld.service
 
