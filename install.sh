@@ -81,7 +81,7 @@ else
 fi
 
 #其实screen，vim可以不用。。但是我为了自己方便就加上了
-cmd2="$cmd install screen vim  unzip git curl-y"
+cmd2="$cmd install screen vim  unzip git curl -y"
 $cmd2
 cmd3="$cmd install aria2 -y"
 $cmd3
