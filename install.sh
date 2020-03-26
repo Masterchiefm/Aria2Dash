@@ -1,5 +1,5 @@
 #/bin/bash
-#Verion:2.1.1
+
 sudo rm -rf ./Aria2Dash.sh
 cd /
 
@@ -17,6 +17,9 @@ cd /
     #filebrowser,因为GFW，国内VPS可能装不上,默认是可以装
     f=y
     
+    #log,安装日志，保存于/root/log_of_install_aria2dash.log
+    log="/root/log_of_install_aria2dash.log"
+    date > $log
 while getopts ":p:a:d:f:h:" opt
 do
     case $opt in
@@ -51,33 +54,37 @@ done
 if [ $d != $dir ] ; then
 	echo "d!=dir"
 	dir=$d
+	
 fi
+echo "ariang directory is $dir" >> $log
+
 
 echo "判断系统是debian，Ubuntu，Fedora，cent还是手机的turmux（咕）"
 
 if [[  $(command -v apt)  ]] ; then
         cmd="sudo apt"
-	echo "Ubuntu/Debian"
+	echo "your system is Ubuntu/Debian" >>$log
 	apache2="apache2"
 else
         cmd="sudo yum"
-	echo "Cent OS"
+	echo "your system is CentOS/Fedora. Note that cent cannot install aria2 because it lacks aria2 packge"
+	echo "cent 软件源不包含aria2，所以你得自己另外寻找办法安装。具体自己百度"
 	apache2="httpd"
         firewall-cmd --zone=public --add-port=80/tcp --permanent  #cent的防火墙有时候很恶心
 	
-	#cent 不能直接安装aria2，fedora却可以。真是醉了
-	wget https://github.com/aria2/aria2/releases/download/release-1.35.0/aria2-1.35.0.tar.gz
-	tar -zxvf aria2-1.35.0.tar.gz
-	cd aria2-1.35.0
-	yum install gcc* -y
-	./configure 
-	make
-	make install
+	#cent 不能直接安装aria2，fedora却可以。真是醉了。以下是编译安装，安装时长高达半小时。醉了。
+	#wget https://github.com/aria2/aria2/releases/download/release-1.35.0/aria2-1.35.0.tar.gz
+	#tar -zxvf aria2-1.35.0.tar.gz
+	#cd aria2-1.35.0
+	#yum install gcc* -y
+	#./configure 
+	#make
+	#make install
 	
 
 fi
 
-
+###############################安装必须的包#################################
 echo "Updatting..."
 $cmd update -y
 echo "根据需要，安装Apache2或者httpd"
@@ -88,24 +95,51 @@ if [ $a = "y" ] ; then
     sudo mv $dir/index.html $dir/index.html0
     systemctl restart $apache2 
 else  
-    echo "I will not install apache2."
+    echo "you choosed not to install apache2/httpd."
+    
 fi
 
 #其实screen，vim可以不用。。但是我为了自己方便就加上了
 cmd2="$cmd install screen vim  unzip git curl -y"
 $cmd2
+#以防万一，每个包单独安装
 cmd3="$cmd install vim  -y"
 $cmd3
+
 cmd3="$cmd install unzip  -y"
 $cmd3
+if [[  $(command -v unzip)  ]] ; then
+	echo "installed unzip" >>$log
+else
+	echo "install unzip failed">>$log
+fi
+
 cmd3="$cmd install git  -y"
 $cmd3
+if [[  $(command -v git)  ]] ; then
+	echo "installed git" >>$log
+else
+	echo "install git failed">>$log
+fi
+
 cmd3="$cmd install curl  -y"
 $cmd3
+if [[  $(command -v curl)  ]] ; then
+	echo "installed curl" >>$log
+else
+	echo "install curl failed">>$log
+fi
+
 cmd3="$cmd install aria2  -y"
 $cmd3
+if [[  $(command -v aria2c)  ]] ; then
+	echo "installed aria2" >>$log
+else
+	echo "install aria2 failed">>$log
+fi
+###############################安装必须的包####################################
 
-
+###############################配置网页管理端AriaNG#############################
 echo "下载AriaNg"
 tmp="/tmp/Aria2Dash"
 sudo rm -rf $tmp
@@ -125,10 +159,13 @@ sudo cat $dir/ariang/head.html > $dir/ariang/index.html
 sudo echo $link >> $dir/ariang/index.html
 sudo cat $dir/ariang/foot.html >> $dir/ariang/index.html
 sudo echo $link >> $dir/filebrowser.html
+###############################配置网页管理端AriaNG#############################
 
+
+###############################安装filebrowser#####################################
 echo "安装FileBrowser,如果国内服务器安装卡在这里，请重新运行并使用 -f n 跳过这一步安装。"
 if [ $f = "y" ]  ;  then
-    bash $tmp/get-filebrowser.sh
+    bash $tmp/get-filebrowser.sh #因为最新版有无法编辑文件的bug，所以改了脚本，只装旧版
     sudo cp $tmp/filebrowser /etc/init.d/
     sudo chmod 755  /etc/init.d/filebrowser
     sudo systemctl daemon-reload
@@ -136,15 +173,24 @@ if [ $f = "y" ]  ;  then
          sudo update-rc.d filebrowser defaults #Ubuntu用这个
 	 sudo systemctl restart filebrowser
 	else
+	firewall-cmd --zone=public --add-port=8080/tcp --permanent
         sudo chkconfig filebrowser on #Cent OS用这个
 	sudo systemctl restart filebrowser
 	fi
+    if [[  $(command -v filebrowser)  ]] ; then
+	echo "installed filebrowser" >>$log
+    else
+	echo "无法安装filebrowser，可能因为国内网络问题无法访问git导致">>$log
+    fi
    
     
 else
-    echo "不安装FileBrowser"
+    echo "not isntall FileBrowser">>$log
 fi
+###############################安装filebrowser#####################################
 
+
+###############################aria2配置文件修改#####################################
 echo "开始配置aria2"
 sudo rm -rf /root/.aria2
 sudo mkdir -p /root/.aria2
@@ -175,4 +221,4 @@ fi
 
 sudo systemctl restart aria2c
 systemctl restart firewalld.service
-
+###############################aria2配置文件修改#####################################
