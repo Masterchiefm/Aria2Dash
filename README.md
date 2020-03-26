@@ -62,11 +62,15 @@ sudo yum install curl -y
 ### 3. 高级安装。
 先下载脚本。
 ```
-wget --no-check-certificate https://github.com/Masterchiefm/Aria2Dash/raw/master/Aria2Dash.sh
+#
+wget --no-check-certificate https://github.com/Masterchiefm/Aria2Dash/raw/master/install.sh
+#
 ```
 然后运行。
 ```
-bash ./Aria2Dash.sh -a n -d 网页目录 -p aria2密码
+#
+bash ./install.sh -a n -d 网页目录 -p aria2密码
+#
 ```
 注意，只能用bash，不可以用sh。
 
