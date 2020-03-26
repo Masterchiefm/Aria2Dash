@@ -6,7 +6,7 @@ However, its comman-line feature makes it difficult for most people to deploy it
 [The full English version README is here](https://github.com/Masterchiefm/Aria2Dash/blob/master/README_en.md)
 
 
-[小白请看这里](https://github.com/Masterchiefm/Aria2Dash/blob/master/README_easy.md)
+[小白请看这里](https://github.com/Masterchiefm/Aria2Dash/blob/master/README_easy.md) |[另一个文笔好的教程，什么值得买](https://post.smzdm.com/p/a6lrgdxe/)
 # 一键脚本，设置带Web管理前端的Aria2下载工具
 
 ## 关于此脚本
