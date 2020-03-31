@@ -23,7 +23,7 @@ Aria2是一个基于命令行的开源下载工具，支持除了ed2k以及迅�
 
 4. 瞎改了[AriaNg](https://github.com/mayswind/AriaNg)网页管理界面，添加了FileBrowser的入口以管理文件，以及直接进入文件目录的入口。Aria2密钥默认为1234，可在安装时另外指定。输入http://你的ip/ariang  即可访问。
 
-5. 每分钟刷新硬盘剩余容量
+5. 每分钟刷新硬盘剩余容量,显示在网页根目录Disk_Usage.html中。网页能自动刷新。
 
 
 ## 安装
