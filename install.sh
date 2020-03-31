@@ -231,6 +231,7 @@ systemctl restart firewalld.service
 ###############################Crontab设置###############################
 #显示硬盘容量
 	setting="* * * * * sh /root/.aria2/diskusage.sh"
+	echo "${setting}"
 	crontab="/var/spool/cron/crontabs/root"
 	
 	#file指网页显示硬盘容量的html文件
@@ -240,7 +241,7 @@ systemctl restart firewalld.service
 	echo $file > /root/.aria2/diskusage.sh
 	
 	#diskusage.sh里会引用到file，该sh会将执行结果输出到file中
-	cat /tmp/Aria2Dash/diskusage.sh >>  /root/.aria2/
-	echo $setting >> $crontab
-	systemctl restart crontab
+	cat /tmp/Aria2Dash/diskusage.sh >>  /root/.aria2/diskusage.sh
+	echo "${setting}" >> $crontab
+	systemctl restart cron
 ###############################Crontab设置###############################	
