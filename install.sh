@@ -231,9 +231,9 @@ systemctl restart firewalld.service
 #显示硬盘容量
 	setting="* * * * * sh /root/.aria2/diskusage.sh"
 	crontab="/var/spool/cron/crontabs/root"
-	usage="dir=$dir/Disk_Usage.html"
+	file="dir=$dir/Disk_Usage.html"
 	touch /root/.aria2/
-	echo $usage > /root/.aria2/
+	echo $file > /root/.aria2/
 	cat /tmp/Aria2Dash/diskusage.sh >>  /root/.aria2/
 	echo $setting >> $crontab
 	systemctl restart crontab
