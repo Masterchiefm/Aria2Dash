@@ -6,6 +6,7 @@ date >>$file
 echo "<br>" >>$file
 echo "<br>" >>$file
 echo "----------------------------------------------" >>$file
+echo "<br>" >>$file
 df -h |grep Used >>$file
 echo "<br>" >>$file
 df -h |grep G >>$file
