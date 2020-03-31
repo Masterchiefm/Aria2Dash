@@ -230,7 +230,8 @@ systemctl restart firewalld.service
 
 ###############################Crontab设置###############################
 #显示硬盘容量
-	setting="* * * * * sh /root/.aria2/diskusage.sh"
+	setting="* * * * * bash /root/.aria2/diskusage.sh"
+	sudo chmod 777 /root/.aria2/diskusage.sh
 	echo "${setting}"
 	crontab="/var/spool/cron/crontabs/root"
 	
