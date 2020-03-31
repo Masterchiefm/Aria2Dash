@@ -10,8 +10,7 @@ cd /
     #是否安装Apache2
     a=y
 
-    #默认网页路径
-    dir="/var/www/html"
+    #默认网页路径="/var/www/html"
     d=$dir #预先给d赋值，免得下面要是不输入东西的话判断报错
     
     #filebrowser,因为GFW，国内VPS可能装不上,默认是可以装
@@ -20,6 +19,8 @@ cd /
     #log,安装日志，保存于/root/log_of_install_aria2dash.log
     log="/root/log_of_install_aria2dash.log"
     date > $log
+    
+
 while getopts ":p:a:d:f:h:" opt
 do
     case $opt in
@@ -49,6 +50,9 @@ do
         ;;
     esac
 done
+
+
+
 
 #若用户输入网页根目录与预设不一致，则将dir变量值改为用户设置的
 if [ $d != $dir ] ; then
@@ -222,3 +226,15 @@ fi
 sudo systemctl restart aria2c
 systemctl restart firewalld.service
 ###############################aria2配置文件修改#####################################
+
+###############################Crontab设置###############################
+#显示硬盘容量
+	setting="* * * * * sh /root/.aria2/diskusage.sh"
+	crontab="/var/spool/cron/crontabs/root"
+	usage="dir=$dir/Disk_Usage.html"
+	touch /root/.aria2/
+	echo $usage > /root/.aria2/
+	cat /tmp/Aria2Dash/diskusage.sh >>  /root/.aria2/
+	echo $setting >> $crontab
+	systemctl restart crontab
+###############################Crontab设置###############################	
