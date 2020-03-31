@@ -231,7 +231,7 @@ sudo systemctl restart aria2c
 ###############################Crontab设置###############################
 #显示硬盘容量
 	setting="* * * * * bash /root/.aria2/diskusage.sh"
-	sudo chmod 777 /root/.aria2/diskusage.sh
+	
 	echo "${setting}"
 	crontab="/var/spool/cron/crontabs/root"
 	
@@ -240,7 +240,7 @@ sudo systemctl restart aria2c
 	
 	touch /root/.aria2/diskusage.sh
 	echo $file > /root/.aria2/diskusage.sh
-	
+	sudo chmod 777 /root/.aria2/diskusage.sh
 	#diskusage.sh里会引用到file，该sh会将执行结果输出到file中
 	cat /tmp/Aria2Dash/diskusage.sh >>  /root/.aria2/diskusage.sh
 	echo "${setting}" >> $crontab
