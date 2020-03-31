@@ -219,13 +219,13 @@ else
         sudo chkconfig aria2c on #Cent OS用这个
 	echo "Cent OS"
         firewall-cmd --zone=public --add-port=6800/tcp --permanent  #cent的防火墙有时候很恶心
-
+	systemctl restart firewalld.service
 fi
 
 
 
 sudo systemctl restart aria2c
-systemctl restart firewalld.service
+
 ###############################aria2配置文件修改#####################################
 
 ###############################Crontab设置###############################
