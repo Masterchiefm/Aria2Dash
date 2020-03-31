@@ -10,7 +10,8 @@ cd /
     #是否安装Apache2
     a=y
 
-    #默认网页路径="/var/www/html"
+    #默认网页路径
+    dir="/var/www/html"
     d=$dir #预先给d赋值，免得下面要是不输入东西的话判断报错
     
     #filebrowser,因为GFW，国内VPS可能装不上,默认是可以装
