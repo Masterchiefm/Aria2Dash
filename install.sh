@@ -158,7 +158,8 @@ sudo unzip $tmp/*.zip -d $dir/ariang
 sudo chmod 777 -R $dir/ariang
 
 echo "正在获取服务器ip，然后填入AriaNg"
-ip=$(curl -s https://ipinfo.io/ip)
+ip=$(curl -s https://ipapi.co/ip)
+echo "你的公网ip是$ip"
 link="<a href="http://$ip:8080" target="blank">"
 sudo cat $dir/ariang/head.html > $dir/ariang/index.html
 sudo echo $link >> $dir/ariang/index.html
@@ -168,7 +169,7 @@ sudo echo $linkfilebrowser >> $dir/filebrowser.html
 
 
 ###############################安装filebrowser#####################################
-echo "安装FileBrowser,如果国内服务器安装卡在这里，请重新运行并使用 -f n 跳过这一步安装。"
+echo "安装FileBrowser,如果国内服务器安装卡在这里，请ctrl + c 退出并参考高级安装，使用 -f n 跳过这一步安装。"
 if [ $f = "y" ]  ;  then
     bash $tmp/get-filebrowser.sh #因为最新版有无法编辑文件的bug，所以改了脚本，只装旧版
     sudo cp $tmp/filebrowser /etc/init.d/
