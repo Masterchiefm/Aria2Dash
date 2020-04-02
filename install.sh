@@ -104,6 +104,7 @@ else
     
 fi
 
+touch $dir/Aria2Dash_is_installing
 #其实screen，vim可以不用。。但是我为了自己方便就加上了
 cmd2="$cmd install screen vim  unzip git curl -y"
 $cmd2
@@ -248,3 +249,4 @@ sudo systemctl restart aria2c
 	echo "${setting}" >> $crontab
 	systemctl restart cron
 ###############################Crontab设置###############################	
+rm $dir/Aria2Dash_is_installing
