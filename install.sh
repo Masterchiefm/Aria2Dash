@@ -164,7 +164,8 @@ link="<a href="http://$ip:8080" target="blank">"
 sudo cat $dir/ariang/head.html > $dir/ariang/index.html
 sudo echo $link >> $dir/ariang/index.html
 sudo cat $dir/ariang/foot.html >> $dir/ariang/index.html
-sudo echo $linkfilebrowser >> $dir/filebrowser.html
+sudo echo "$link filebrowser" >> $dir/filebrowser.html
+sudo echo "</a>" >> $dir/filebrowser.html
 ###############################配置网页管理端AriaNG#############################
 
 
