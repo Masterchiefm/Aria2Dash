@@ -250,3 +250,16 @@ sudo systemctl restart aria2c
 	systemctl restart cron
 ###############################Crontab设置###############################	
 rm $dir/Aria2Dash_is_installing
+
+###############################控制面版#############################
+sudo rm -rf /etc/aria2dash
+sudo mkdir /etc/aria2dash
+mv $tmp/aria2dash.py /etc/aria2dash
+mv $tmp/changewwwdir.sh /etc/aria2dash
+echo $dir > /etc/aria2dash/wwwdir
+echo "alias python=python3" >> /root/.bashrc
+echo "alias aria2dash=/etc/aria2dash/aria2dash" >>  /root/.bashrc
+echo "python3 /etc/aria2dash/aria2dash.py" > /etc/aria2dash/aria2dash
+sudo chmod 777 /etc/aria2dash/aria2dash
+source ~/.bashrc
+###############################控制面版#############################
