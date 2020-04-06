@@ -64,7 +64,7 @@ fi
 echo "ariang directory is $dir" >> $log
 
 
-echo "判断系统是debian，Ubuntu，Fedora，cent还是手机的turmux（咕）"
+echo "判断系统是debian，Ubuntu，Fedora，cent"
 
 if [[  $(command -v apt)  ]] ; then
         cmd="sudo apt"
@@ -72,8 +72,9 @@ if [[  $(command -v apt)  ]] ; then
 	apache2="apache2"
 else
         cmd="sudo yum"
-	echo "your system is CentOS/Fedora. Note that cent cannot install aria2 because it lacks aria2 packge"
-	echo "cent 软件源不包含aria2，所以你得自己另外寻找办法安装。具体自己百度"
+	
+	yum -y install epel-release
+	yum -y install aria2
 	apache2="httpd"
         firewall-cmd --zone=public --add-port=80/tcp --permanent  #cent的防火墙有时候很恶心
 	
