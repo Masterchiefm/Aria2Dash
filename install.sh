@@ -78,7 +78,7 @@ else
 	apache2="httpd"
         firewall-cmd --zone=public --add-port=80/tcp --permanent  #cent的防火墙有时候很恶心
 	
-	#cent 不能直接安装aria2，fedora却可以。真是醉了。以下是编译安装，安装时长高达半小时。醉了。
+	#cent8 不能直接安装aria2，fedora和cen7却可以。真是醉了。以下是编译安装，安装时长高达半小时。醉了。
 	#wget https://github.com/aria2/aria2/releases/download/release-1.35.0/aria2-1.35.0.tar.gz
 	#tar -zxvf aria2-1.35.0.tar.gz
 	#cd aria2-1.35.0
