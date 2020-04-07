@@ -44,11 +44,11 @@ sudo yum install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Ar
 若安装前已经使用了宝塔面板，则使用如下，并将/wwwroot/www.example.com 换为你宝塔面板显示的网站目录。
 ```
 #Ubuntu用这个
-sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/raw/master/install.sh) -a n -d /wwwroot/www.example.com
+sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.5/install.sh) -a n -d /wwwroot/www.example.com
 ```
 ```
 #Fedora/cent用这个
-sudo yum install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/raw/master/install.sh) -a n -d /wwwroot/www.example.com
+sudo yum install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/releases/download/2.1.5/install.sh) -a n -d /wwwroot/www.example.com
 ```
 
 ### 2. 在部署服务器前设置以自动安装
