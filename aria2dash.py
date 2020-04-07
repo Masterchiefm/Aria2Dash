@@ -6,13 +6,13 @@
 
 from os import popen
 from os import system
-
+system('clear')
 
 # In[17]:
 
 
 def main_page():
-    
+    system('clear')
     print ("=====================Aria2Dash 控制面板=======================")
     print( """
 
@@ -21,7 +21,7 @@ def main_page():
         3. 更改AriaNg存放路径
         4. aria2运行状态
         5. FileBrowser 运行状态
-        6. 退出
+        0. 退出
         
         """)
     print ("=====================Aria2Dash 控制面板=======================")   
@@ -37,42 +37,36 @@ def opt1():
     system('clear')
     passwd = input ("输入新的Aria2密码:")
     
-    #用变量f存储源文件
-    f = ""
+    # #用变量f存储源文件
+    # f = ""
     
-    #a表示找到含有关键词key的这一行
-    a = 0
+    # #a表示找到含有关键词key的这一行
+    # a = 0
     
     dir = "/root/.aria2/aria2.conf"
     key = "rpc-secret="
     
     #打开dir，将内容逐行读取到f，有key的行就把这一行改密码
-    f0 = open(dir,'r', encoding='UTF-8')
-    for line in f0:
-        if passwd == "":
-            key ="#rpc-secret="
-        if "rpc-secret=" in line:
-            line = key + passwd + "\n"
-            f = f + line 
-            a = a + 1
-            #print (line)
-        else:
-            f = f + line
-            a = a + 0
-            #print (line)
+
+    # open函数在外部设置缓冲变量是可能会导致写入问题,具体原因不明,可能是引用类型和指针类型变量的赋值冲突
+    # 这里建议直接用with open... as ...将缓冲变量read_lines安置其中
+    with open(dir,'r', encoding='UTF-8') as r_file:
+        read_lines = r_file.readlines()
+        
+        for index_read_lines in range(len(read_lines)):
             
-    
-    if a == 0:
-        line = key + passwd
-        f = f + line + "\n"
-    
-    f0.close
-    
-    #显示整个f，然后写入dir
-    print (f)
-    f0 = open(dir,'w')
-    f0.write(f)
-    f0.close
+            if key in read_lines[index_read_lines]:
+                if passwd == '':
+                    key  ="#rpc-secret="
+                    read_lines[index_read_lines] = key + passwd + '\n' 
+                else:
+                    read_lines[index_read_lines] = key + passwd + '\n' 
+ 
+
+    with open(dir,'w',encoding = 'utf-8') as w_file:
+        for each_line in read_lines:
+            w_file.write(each_line)
+
     out = popen('systemctl restart aria2c').read()
     print ("""已更改""")
     return 1
@@ -84,38 +78,29 @@ def opt1():
 def opt2():
     popen('clear')
     n_dir = input ("输入新的Aria2默认下载路径:")
-    f = ""
-    a = 0
+    # f = ""
+    # a = 0
     dir = "/root/.aria2/aria2.conf"
     key = "dir="
-    f0 = open(dir,'r', encoding='UTF-8')
-    for line in f0:
-        while n_dir == "":
-            print ("错误！不能留空")
-            n_dir = input ("输入新的Aria2默认下载路径:")
+    with open(dir,'r',encoding='utf-8') as r_file:
+        read_lines = r_file.readlines()
+        
+        for index_read_lines in range(len(read_lines)):
+            while n_dir == "":
+                print ("错误！不能留空")
+                n_dir = input ("输入新的Aria2默认下载路径:")
+            if key in read_lines[index_read_lines]:
+                print("原始下载路径: ",read_lines[index_read_lines])
+
+                read_lines[index_read_lines] = key + n_dir + '\n' 
+                print("修改后的路径: ",read_lines[index_read_lines])
+                
+ 
+
+    with open(dir,'w',encoding = 'utf-8') as w_file:
+        for each_line in read_lines:
+            w_file.write(each_line)
             
-        if key in line:
-            print ('原始下载路径为：' ,line[4:])
-            line = key + n_dir + "\n"
-            f = f + line 
-            a = a + 1
-            print ('修改过后的下载路径为：',line[4:1])
-            #print (line)
-        else:
-            f = f + line
-            a = a + 0
-            #print (line)
-            
-    
-    if a == 0:
-        line = key + n_dir + "\n"
-        f = f + line
-    
-    f0.close
-    print (f)
-    f0 = open(dir,'w')
-    f0.write(f)
-    f0.close
     out = popen('systemctl restart aria2c').read()
     print ("""已更改""")
     return 1
@@ -134,7 +119,7 @@ def opt3():
     f = open('wwwdir','w')
     f.write(n_dir)
     f.close
-    a=popen('bash /etc/Aria2Dash/changewwwdir.sh').read()
+    a=popen('bash /etc/aria2dash/changewwwdir.sh').read()
     for line in a.splitlines():
         print (line)
     return 1
@@ -241,7 +226,7 @@ def process():
         a = opt4()
     elif opt ==5:
         a = opt5()
-    elif opt ==6:
+    else:
         a = 0
     return a
         
@@ -256,7 +241,6 @@ while a :
 
 
 # In[ ]:
-
 
 
 
