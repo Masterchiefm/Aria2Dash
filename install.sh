@@ -250,17 +250,24 @@ sudo systemctl restart aria2c
 	echo "${setting}" >> $crontab
 	systemctl restart cron
 ###############################Crontab设置###############################	
-rm $dir/Aria2Dash_is_installing
+
 
 ###############################控制面版#############################
 sudo rm -rf /etc/aria2dash
 sudo mkdir /etc/aria2dash
 mv $tmp/aria2dash.py /etc/aria2dash
 mv $tmp/changewwwdir.sh /etc/aria2dash
-echo $dir > /etc/aria2dash/wwwdir
-echo "alias python=python3" >> /root/.bashrc
-echo "alias aria2dash=/etc/aria2dash/aria2dash" >>  /root/.bashrc
-echo "python3 /etc/aria2dash/aria2dash.py" > /etc/aria2dash/aria2dash
-sudo chmod 777 /etc/aria2dash/aria2dash
+sudo echo $dir > /etc/aria2dash/wwwdir
+sudo touch /usr/bin/aria2dash
+sudo echo "python3 /etc/aria2dash/aria2dash.py" > /usr/bin/aria2dash
+sudo chmod 777 /usr/bin/aria2dash
 source ~/.bashrc
 ###############################控制面版#############################
+rm $dir/Aria2Dash_is_installing
+echo "==============================================================="
+cat $log
+echo "==============================================================="
+echo "Commands:"
+echo "在终端中直接输入aria2dash即可进入控制面板，有修改密码等功能"
+echo "可以用systemctl stop aria2c 等方式单个关闭aria2或者filebrowser"
+
