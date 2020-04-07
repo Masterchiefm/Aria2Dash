@@ -29,7 +29,7 @@ Aria2是一个基于命令行的开源下载工具，支持除了ed2k以及迅�
 ## 安装
 
 ### 1. 默认方式安装。
-复制粘贴以下命令到终端，运行执行即可。全部参数采用默认设置。
+复制粘贴以下命令到终端，运行执行即可。全部参数采用默认设置。因cent8的源里无aria2，所以不能用。cent7可以，6也行
 
 
 ```
@@ -37,8 +37,18 @@ Aria2是一个基于命令行的开源下载工具，支持除了ed2k以及迅�
 sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/raw/master/Aria2Dash.sh)
 ```
 ```
-#Fedora用这个
+#Fedora/cent用这个
 sudo yum install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/raw/master/Aria2Dash.sh)
+```
+
+若安装前已经使用了宝塔面板，则使用如下，并将/wwwroot/www.example.com 换为你宝塔面板显示的网站目录。
+```
+#Ubuntu用这个
+sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/raw/master/install.sh) -a n -d /wwwroot/www.example.com
+```
+```
+#Fedora/cent用这个
+sudo yum install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/raw/master/install.sh) -a n -d /wwwroot/www.example.com
 ```
 
 ### 2. 在部署服务器前设置以自动安装
@@ -52,14 +62,15 @@ sudo apt install curl -y
  # Done！这是Ubuntu的脚本
 ```
 
-虽然本脚本可以在cent运行，但是cent因为它的源里没有aria2c软件包，只能通过编译安装的方式安装aria2c，也就意味着安装时长高达半小时。不推荐使用。也许后期我会想想办法。而且cent的防火墙太难受了，头大。但是Fedora是正常的，可以使用
+虽然本脚本可以在cent运行，但是cent8因为它的源里没有aria2c软件包，只能通过编译安装的方式安装aria2c，也就意味着安装时长高达半小时。不推荐使用。也许后期我会想想办法。而且cent的防火墙太难受了，头大。但是Fedora以及cent7是正常的，可以使用
 ```
 #!/bin/bash
 sudo yum install curl -y
  bash <(curl -s -L  https://github.com/Masterchiefm/Aria2Dash/raw/master/Aria2Dash.sh)
- # Done！这是Fedoras的脚本
+ # Done！这是Fedora/cent的脚本
 ```
 保存后请再次检查服务器套餐设置，并记得勾选上脚本。点击deploy后，等待5分钟即可。
+
 
 ### 3. 高级安装。
 先下载脚本。
@@ -114,6 +125,5 @@ sudo systemctl stop aria2
 ## 例子
 [moqiqin.cn/lixian](https://moqiqin.cn/ariang)
 
-其实就是搞个脚本把下面两个东西凑在一起用。
-
+其实就是搞个脚本把一些乱七八糟的东西混杂
 
