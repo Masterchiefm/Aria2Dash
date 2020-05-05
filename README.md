@@ -55,6 +55,10 @@ sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Ar
 sudo yum install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/releases/download/2.2.0/install.sh) -a n -d /wwwroot/www.example.com
 ```
 
+直接运行命令即可完成安装。后期可通过在命令行中输入 aria2dash  来启动控制管理界面，可在此界面中修改密码等配置。
+![管理面板截图](https://github.com/Masterchiefm/pictures/raw/master/Aria2Dash/%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF.jpg)
+![管理面板截图](https://github.com/Masterchiefm/pictures/raw/master/Aria2Dash/%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF2.jpg)
+
 ### 2. 在部署服务器前设置以自动安装
 以vultr为例。在deploy服务器前，找到script选项，添加一个新的boot脚本。删除原有内容，粘贴以下并保存。
 
@@ -129,5 +133,5 @@ sudo systemctl stop aria2
 ## 例子
 [moqiqin.cn/lixian](https://moqiqin.cn/ariang)
 
-其实就是搞个脚本把一些乱七八糟的东西混杂
+其实就是搞个脚本把一些乱七八糟的东西混杂一起，方便使用
 
