@@ -28,24 +28,25 @@ Aria2是一个基于命令行的开源下载工具，支持除了ed2k以及迅�
 
 6. 新增了控制管理面板
 ```
-
+如果在某堂下片，建议配合[Aria2py](https://github.com/SuperMore/Aria2Py)使用
 
 ## 安装
 
 ### 1. 默认方式安装。
 复制粘贴以下命令到终端，运行执行即可。全部参数采用默认设置。因cent8的源里无aria2，所以不能用。cent7可以，6也行
-
-
 ```
-#Ubuntu用这个
+bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/raw/master/Aria2Dash.sh)
+
+
+假如报错，那是因为没安装curl，可以用下面的
+#报错的话，Ubuntu用这个
 sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/raw/master/Aria2Dash.sh)
-```
-```
-#Fedora/cent用这个
+
+#报错的话，Fedora/cent用这个
 sudo yum install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/raw/master/Aria2Dash.sh)
 ```
 
-若安装前已经使用了宝塔面板，则使用如下，并将/wwwroot/www.example.com 换为你宝塔面板显示的网站目录。
+若安装前已经使用了宝塔面板，则不要用上面的，使用如下的，并将/wwwroot/www.example.com 换为你宝塔面板显示的网站目录。
 ```
 #Ubuntu用这个
 sudo apt install curl -y && bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/releases/download/2.2.0/install.sh) -a n -d /wwwroot/www.example.com
