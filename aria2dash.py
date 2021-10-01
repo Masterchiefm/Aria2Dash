@@ -21,6 +21,7 @@ def main_page():
         3. 更改AriaNg存放路径
         4. aria2运行状态
         5. FileBrowser 运行状态
+        6. 卸载
         0. 退出
         
         """)
@@ -209,7 +210,11 @@ def opt5():
 
 
 # In[23]:
-
+def opt6():
+    system('rm -rf ~/.aria2*')
+    system('sudo apt remove aria2')
+    system('rm -rf /etc/aria2dash')
+    print('已卸载.')
 
 def process():
     
@@ -226,6 +231,8 @@ def process():
         a = opt4()
     elif opt ==5:
         a = opt5()
+    elif opt == 6:
+        a = opt6()
     else:
         a = 0
     return a
