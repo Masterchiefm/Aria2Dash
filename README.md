@@ -35,7 +35,7 @@ Aria2是一个基于命令行的开源下载工具，支持除了ed2k以及迅�
 ### 1. 默认方式安装。
 复制粘贴以下命令到终端，运行执行即可。全部参数采用默认设置。因cent8的源里无aria2，所以不能用。cent7可以，6也行
 ```
-bash <(curl -s -L https://github.com/Masterchiefm/Aria2Dash/raw/master/Aria2Dash.sh)
+bash <(curl -s -L https://raw.githubusercontent.com/Masterchiefm/Aria2Dash/master/Aria2Dash.sh)
 
 
 假如报错，那是因为没安装curl，可以用下面的
