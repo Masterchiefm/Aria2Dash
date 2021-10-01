@@ -171,33 +171,6 @@ sudo echo "</a>" >> $dir/filebrowser.html
 ###############################配置网页管理端AriaNG#############################
 
 
-###############################安装filebrowser#####################################
-echo "安装FileBrowser,如果国内服务器安装卡在这里，请ctrl + c 退出并参考高级安装，使用 -f n 跳过这一步安装。"
-if [ $f = "y" ]  ;  then
-    bash $tmp/get-filebrowser.sh #因为最新版有无法编辑文件的bug，所以改了脚本，只装旧版
-    sudo cp $tmp/filebrowser /etc/init.d/
-    sudo chmod 755  /etc/init.d/filebrowser
-    sudo systemctl daemon-reload
-    	if [[  $(command -v apt)  ]] ; then
-         sudo update-rc.d filebrowser defaults #Ubuntu用这个
-	 sudo systemctl restart filebrowser
-	else
-	firewall-cmd --zone=public --add-port=8080/tcp --permanent
-        sudo chkconfig filebrowser on #Cent OS用这个
-	sudo systemctl restart filebrowser
-	fi
-    if [[  $(command -v filebrowser)  ]] ; then
-	echo "installed filebrowser" >>$log
-    else
-	echo "无法安装filebrowser，可能因为国内网络问题无法访问git导致">>$log
-    fi
-   
-    
-else
-    echo "not isntall FileBrowser">>$log
-fi
-###############################安装filebrowser#####################################
-
 
 ###############################aria2配置文件修改#####################################
 echo "开始配置aria2"
@@ -263,6 +236,36 @@ sudo echo "python3 /etc/aria2dash/aria2dash.py" > /usr/bin/aria2dash
 sudo chmod 777 /usr/bin/aria2dash
 source ~/.bashrc
 ###############################控制面版#############################
+
+###############################安装filebrowser#####################################
+echo "安装FileBrowser,如果国内服务器安装卡在这里，请ctrl + c 退出并参考高级安装，使用 -f n 跳过这一步安装。"
+echo "程序主体已经安装完成。FileBrowser 如果下载太久可以不要。"
+echo "在终端中直接输入aria2dash即可进入控制面板，有修改密码等功能"
+if [ $f = "y" ]  ;  then
+    bash $tmp/get-filebrowser.sh #因为最新版有无法编辑文件的bug，所以改了脚本，只装旧版
+    sudo cp $tmp/filebrowser /etc/init.d/
+    sudo chmod 755  /etc/init.d/filebrowser
+    sudo systemctl daemon-reload
+    	if [[  $(command -v apt)  ]] ; then
+         sudo update-rc.d filebrowser defaults #Ubuntu用这个
+	 sudo systemctl restart filebrowser
+	else
+	firewall-cmd --zone=public --add-port=8080/tcp --permanent
+        sudo chkconfig filebrowser on #Cent OS用这个
+	sudo systemctl restart filebrowser
+	fi
+    if [[  $(command -v filebrowser)  ]] ; then
+	echo "installed filebrowser" >>$log
+    else
+	echo "无法安装filebrowser，可能因为国内网络问题无法访问git导致">>$log
+    fi
+   
+    
+else
+    echo "not isntall FileBrowser">>$log
+fi
+###############################安装filebrowser#####################################
+
 rm $dir/Aria2Dash_is_installing
 echo "==============================================================="
 cat $log
