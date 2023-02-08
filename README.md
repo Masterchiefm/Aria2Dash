@@ -136,3 +136,6 @@ sudo systemctl stop aria2
 
 其实就是搞个脚本把一些乱七八糟的东西混杂一起，方便使用
 
+# 推荐的服务商
+[搬瓦工](https://bandwagonhost.com/aff.php?aff=63547)
+[vultr](https://www.vultr.com/?ref=8126287)
