@@ -242,7 +242,8 @@ echo "安装FileBrowser,如果国内服务器安装卡在这里，请ctrl + c �
 echo "程序主体已经安装完成。FileBrowser 如果下载太久可以不要。"
 echo "在终端中直接输入aria2dash即可进入控制面板，有修改密码等功能"
 if [ $f = "y" ]  ;  then
-    bash $tmp/get-filebrowser.sh #因为最新版有无法编辑文件的bug，所以改了脚本，只装旧版
+    #bash $tmp/get-filebrowser.sh #因为最新版有无法编辑文件的bug，所以改了脚本，只装旧版
+    curl -fsSL https://raw.githubusercontent.com/filebrowser/get/master/get.sh | bash
     sudo cp $tmp/filebrowser /etc/init.d/
     sudo chmod 755  /etc/init.d/filebrowser
     sudo systemctl daemon-reload
