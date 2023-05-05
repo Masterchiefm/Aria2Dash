@@ -98,7 +98,7 @@ install_filemanager()
 
 	echo "Downloading File Browser for $filemanager_os/$filemanager_arch..."
 	filemanager_file="${filemanager_os}-$filemanager_arch-filebrowser$filemanager_dl_ext"
-	filemanager_tag="v2.0.16"
+	filemanager_tag="latest"
 	filemanager_url="https://github.com/filebrowser/filebrowser/releases/download/$filemanager_tag/$filemanager_file"
 	echo "$filemanager_url"
 
